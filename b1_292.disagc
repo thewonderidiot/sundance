@@ -3773,8 +3773,8 @@ Banksum = 00001
 
    5744: 01363 0          TC     ALMCADR
 
-   5745: 00155 0 NARROWDB OCTAL  03434               ; GUESS: These are located in bank 20 in Luminary
-   5746: 03434 1 POWERDB  DEC    .02222              ; 69. I don't know what else they would be.
+   5745: 00155 0 NARROWDB OCTAL  00155               ; GUESS: These are located in bank 20 in Luminary
+   5746: 03434 1 WIDEDB   OCTAL  03434               ; 69. I don't know what else they would be.
 
                           EBNAK= T6NEXT              ; This location is similar to Sunburst.
    5747: 02036 0 T6ADR    2CADR  DOT6RUPT

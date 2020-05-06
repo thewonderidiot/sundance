@@ -3432,7 +3432,7 @@ Banksum = 00001
                                                      ; NBDONLY if someone else is in IMUSTALL.
 
    5314: 37675 1          CAF    PRIO35
-   5315: 05142 0          tc     novac
+   5315: 05142 0          TC     NOVAC
                           EBANK= NBDX
    5316: 03555 1          2CADR  NBDONLY
    5317: 14063 1

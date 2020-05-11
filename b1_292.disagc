@@ -6123,7 +6123,7 @@ BANKSUM = 00003
 
 04,3472: 50000 1          INDEX  A
 04,3473: 30310 0          CA     UPBUFF +2
-04,3474: 22000 1          LXCH   A                   ; REPLACED WITH TS L IN LUMINARY.
+04,3474: 22000 1          LXCH   A                   ; Replaced with TS L in Luminary.
 04,3475: 30154 1          CA     MPAC
 04,3476: 60301 0          AD     UPTEMP
 04,3477: 50000 1          INDEX  A
@@ -6132,7 +6132,7 @@ BANKSUM = 00003
 04,3501: 10154 0          CCS    MPAC
 04,3502: 13471 1          TCF    STORLP71
 04,3503: 13552 1          TCF    UPOUT
-04,3504: 01074 0 UPDATLIM ADRES  UNK1074             ; FIXME: Both labels are guesses.
+04,3504: 01074 0 LENDSAFE ADRES  ENDSAFE             ; FIXME: Both labels are guesses.
 04,3505: 13552 1          TCF    UPOUT
 
 04,3506: 35026 0 UPEND72  CAF    BIT1
@@ -6147,7 +6147,7 @@ BANKSUM = 00003
 04,3517: 50000 1          INDEX  A
 04,3520: 30306 1          CAE    UPBUFF
 04,3521: 56001 0          XCH    L
-04,3522: 43504 1          CS     UPDATLIM
+04,3522: 43504 1          CS     LENDSAFE
 04,3523: 60001 0          AD     L
 04,3524: 00006 1          EXTEND
 04,3525: 63621 1          BZMF   UPERROUT

@@ -6046,9 +6046,9 @@ BANKSUM = 00003
 04,3373: 04026 1          OCT    04026
 
 04,3374: 00004 0          INHINT
-04,3375: 40774 1          CS     FLGWRD10
+04,3375: 40774 1          CS     RASFLAG 
 04,3376: 75020 1          MASK   REINTBIT            ; Done via TC UPFLAG; ADRES REINTFLG in Luminary.
-04,3377: 26774 1          ADS    FLGWRD10
+04,3377: 26774 1          ADS    RASFLAG 
 04,3400: 50304 0          INDEX  UPVERB
 04,3401: 13402 0          TCF    +1
 04,3402: 13564 1          TCF    UPEND70
@@ -6755,9 +6755,9 @@ Banksum = 00004
 05,2527: 63127 0          AD     -ELR
 05,2530: 00006 1          EXTEND
 05,2531: 12305 1          BZF    DOFSTART            ; BZF +2 in Luminary.
-05,2532: 30774 0 NONAVKEY CA     FLGWRD10            ; FIXME: FLGWRD10 handling is different.
+05,2532: 30774 0 NONAVKEY CA     RASFLAG             ; FIXME: FLGWRD10 handling is different.
 05,2533: 76050 0          MASK   LOW7
-05,2534: 54774 1          TS     FLGWRD10
+05,2534: 54774 1          TS     RASFLAG 
 05,2535: 10000 0          CCS    A
 05,2536: 12540 0          TCF    +2
 05,2537: 02663 0          TC     CLRINTF2
@@ -6794,7 +6794,7 @@ Banksum = 00004
 
 05,2570: 02725 0 GOPROG2  TC     STARTSB2
 05,2571: 35030 1          CAF    ZERO
-05,2572: 54774 1          TS     FLGWRD10            ; FIXME: FLGWRD10 handling not here in Luminary.
+05,2572: 54774 1          TS     RASFLAG             ; FIXME: FLGWRD10 handling not here in Luminary.
 05,2573: 02663 0          TC     CLRINTF2
 05,2574: 30035 1          CA     CDUT                ; This code exists in RRZEROSB in Luminary.
 05,2575: 04524 0          TC     MAGSUB

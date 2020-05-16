@@ -6340,7 +6340,7 @@ Banksum = 00042
 
 43,2646: 02123 0 IMUATTCK TC     CHKPOOH
 
-43,2647: 32705 1          CAF    BITS4&5
+43,2647: 32705 1          CAF    SBITS4&5            ; BITS4&5 in Luminary.
 43,2650: 00006 1          EXTEND
 43,2651: 02012 0          RAND   CHAN12
 43,2652: 10000 0          CCS    A
@@ -6375,7 +6375,7 @@ Banksum = 00042
 43,2703: 15564 1          TCF    ENDEXT
 
 43,2704: 12600 1 V43K     VN     4300
-43,2705: 00030 1 BITS4&5  OCT    30                  ; Defined in F-F in Luminary.
+43,2705: 00030 1 SBITS4&5 OCT    30                  ; Defined in F-F in Luminary.
 
 43,2706: 02076 1 V82PERF  TC     TESTXACT
 

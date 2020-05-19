@@ -2108,7 +2108,7 @@ Banksum = 00036
 
 37,3362: 07766 1          TC     UNK7766             ; Luminary sets BIT12 of EXTVBACT here. This coding
 37,3363: 04655 0          TC     BANKCALL            ; is not in Luminary.
-37,3364: 20271 1          CADR   U10,2271
+37,3364: 20271 1          CADR   MARKBRAN
 
 37,3365: 13237 0          TCF    DISPN5X             ; V83 in Luminary.
 37,3366: 01466 1 V06N54   VN     0654                ; 1654 in Luminary.

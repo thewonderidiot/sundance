@@ -6886,7 +6886,7 @@ Banksum = 00004
 05,2677: 54003 0          TS     EBANK               ; differently from Luminary.
 
 05,2700: 35030 1          CAF    ZERO
-05,2701: 55636 1          TS                         ; FIXME: What are these?
+05,2701: 55636 1          TS     ACCSET              ; FIXME: What are these?
 05,2702: 55457 1          TS
 05,2703: 55460 0          TS
 05,2704: 55461 1          TS

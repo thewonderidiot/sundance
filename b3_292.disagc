@@ -2390,6 +2390,8 @@ Banksum = 00015
                                                      ; Luminary checks NEEDLBIT here, and goes to DSPLYTOT
                                                      ; if it is set. 
 
+
+
 16,2260: 00006 1          EXTEND                     ; Expanded to individual CS/TS in Luminary
 16,2261: 41451 1          DCS    QERROR
 16,2262: 53763 0          DXCH   AK +1
@@ -2571,7 +2573,7 @@ Banksum = 00015
 16,2507: 61545 1          AD     AOSQTERM
 16,2510: 00006 1          EXTEND
 16,2511: 77707 1          MP     -BIT14
-16,2512: 27426 1          ADS    TRAPDEQ
+16,2512: 27426 1          ADS    TRAPEDQ
 16,2513: 31751 0          CA     JETRATER
 16,2514: 61546 1          AD     AOSRTERM
 16,2515: 00006 1          EXTEND
@@ -2742,7 +2744,7 @@ Banksum = 00015
 16,2745: 55545 0          TS     AOSQTERM
 16,2746: 55546 0          TS     AOSRTERM
 16,2747: 55537 0          TS     AOSQ
-16,2750: 55541 1          TS     QOSR
+16,2750: 55541 1          TS     AOSR
 16,2751: 12775 1          TCF    PAXFILT
 16,2752: 00074 1 KAOS     DEC    60
 16,2753: 31515 1 WORKTIME CA     QACCDOT
@@ -2839,7 +2841,7 @@ Banksum = 00015
 16,3100: 02001 1          OCT    02001
 16,3101: 25464 0          INCR   ZEROOR1             ; Luminary inverts bit 1 of RCSFLAGS instead
 16,3102: 35030 1          CA     ZERO
-16,3103: 13113 0          TS     TSNEXTP
+16,3103: 13113 0          TCF    TSNEXTP
 16,3104: 25464 0 ALTERYZ  INCR   ZEROOR1             ; Luminary inverts bit 1 of RCSFLAGS instead
 16,3105: 31464 0          CA     ZEROOR1
 16,3106: 75026 1          MASK   BIT1
@@ -3016,7 +3018,7 @@ Banksum = 00015
 16,3320: 00006 1          EXTEND
 16,3321: 77670 0          MP     25/32
 16,3322: 55523 0          TS     TJP
-16,3323: 31741 1          CA     ABSEDTOP
+16,3323: 31741 1          CA     ABSEDOTP
 16,3324: 61462 0          AD     -2JETLIM
 16,3325: 00006 1          EXTEND
 16,3326: 63331 0          BZMF   +3

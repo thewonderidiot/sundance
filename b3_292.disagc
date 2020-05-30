@@ -3704,14 +3704,14 @@ Banksum = 00016
 17,2464: 53466 0          DXCH   UERROR
 
 17,2465: 32521 0 TJLAW    CA     TJLAWADR
-17,2466: 55467 1          TS     RJETADR
+17,2466: 55467 1          TS     RETJADR
 17,2467: 35026 0          CA     ONE
 17,2470: 55470 1          TS     AXISCTR
 17,2471: 51470 0          INDEX  AXISCTR
 17,2472: 51535 0          INDEX  SKIPU
 17,2473: 12474 0          TCF    +1
 17,2474: 35024 1          CA     FOUR
-17,2475: 51470 0          INDEX  AXISCNTR
+17,2475: 51470 0          INDEX  AXISCTR
 17,2476: 55535 1          TS     SKIPU
 17,2477: 12566 1          TCF    LOOPER
 17,2500: 51470 0          INDEX  AXISCTR
@@ -4519,6 +4519,7 @@ Banksum = 00017
                           BANK   20
                           EBANK= QPLACE
 
+
 20,2000: 32070 1 DAPDATA1 CAF    BOOLSMSK
 20,2001: 71102 1          MASK   DAPBOOLS
 20,2002: 55353 1          TS     DAPDATR1
@@ -4574,7 +4575,7 @@ Banksum = 00017
 20,2057: 40075 1          CS     FLAGWRD1
 20,2060: 75010 1          MASK   BIT15
 20,2061: 26075 1          ADS    FLAGWRD1
-20,2062: 31102 0          CA     TAPBOOLS
+20,2062: 31102 0          CA     DAPBOOLS
 20,2063: 76221 1          MASK   THREE
 20,2064: 60000 1          DOUBLE
 20,2065: 55331 0          TS     RATEINDX
@@ -4599,7 +4600,7 @@ Banksum = 00017
 20,2106: 00004 0 ENDR03   INHINT
 20,2107: 04737 0          TC     IBNKCALL
 20,2110: 40203 1          CADR   RESTORDB
-20,2111: 15561 1          TCF    ENDEX
+20,2111: 15561 1          TCF    ENDEXT
 
 20,2112: 00006 1 DAPDAT2  EXTEND                     ; Luminary checks APSFLBIT instead
 20,2113: 00030 1          READ   CHAN30
@@ -4785,6 +4786,7 @@ Banksum = 00017
 20,2343: 26075 1          ADS    FLAGWRD1
                                                      ; Luminary sets -2JETLIM here
 
+
 20,2344: 35743 1          CAF    OCT14
 20,2345: 54154 0          TS     MPAC
 20,2346: 41335 1          CS     LEMMASS
@@ -4808,6 +4810,7 @@ Banksum = 00017
 20,2366: 70075 1          MASK   FLAGWRD1
 20,2367: 54075 1          TS     FLAGWRD1
                                                      ; Luminary sets -2JETLIM here
+
 20,2370: 36216 1          CAF    SIX
 20,2371: 54154 0          TS     MPAC
 20,2372: 41335 1          CS     LEMMASS

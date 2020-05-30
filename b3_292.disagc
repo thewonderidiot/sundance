@@ -1685,7 +1685,7 @@ Banksum = 00014
 15,3043: 21454 1                 LOADTIME
 15,3044: 01047 0          STORE  DSPTEM1
 15,3045: 34041 0          STCALL TDEC1
-15,3046: 27027 1                 P57AA               ; FIXME: This is a call to basic!
+15,3046: 27027 1                 LEMPREC
 15,3047: 53575 0          VLOAD  UNIT 
 15,3050: 00001 0                 0D
 15,3051: 37574 0          STCALL XSMD

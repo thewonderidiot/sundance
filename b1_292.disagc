@@ -5234,7 +5234,7 @@ BANKSUM = 00003
 04,2115: 00004 0          INHINT                     ; This INHINT is not present in Luminary.
 
 04,2116: 04737 0          TC     IBNKCALL
-04,2117: 51055 0          CADR   U20C3055            ; FIXME: Possibly CLRADMOD?
+04,2117: 51055 0          CADR   CLRADMOD
 
 04,2120: 45026 1          CS     NODOBIT
 04,2121: 70076 1          MASK   FLAGWRD2

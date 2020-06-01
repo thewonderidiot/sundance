@@ -6046,7 +6046,7 @@ Banksum = 00042
 43,2270: 71101 1          MASK   RADMODES
 43,2271: 55101 1          TS     RADMODES
 43,2272: 04655 0          TC     BANKCALL            ; TC CLRADMOD in Luminary.
-43,2273: 51063 0          CADR   U24,3063
+43,2273: 51063 0          CADR   CLRADMOD
 43,2274: 35047 1          CAF    1SEC
 43,2275: 04655 0          TC     BANKCALL
 43,2276: 01732 0          CADR   DELAYJOB
@@ -6501,7 +6501,7 @@ Banksum = 00042
 43,3040: 40204 0          CADR   RESTORDB
 
 43,3041: 04737 0          TC     IBNKCALL            ; TC CLRADMOD in Luminary.
-43,3042: 51063 0          CADR   U24,3063
+43,3042: 51063 0          CADR   CLRADMOD
 
 43,3043: 45011 0          CS     BIT14
 43,3044: 00006 1          EXTEND

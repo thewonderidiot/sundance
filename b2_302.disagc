@@ -1517,7 +1517,7 @@ Banksum = 00006
 07,2302: 00001 0                 0
 07,2303: 00023 0                 18D
 07,2304: 34041 0          STCALL TDEC1
-07,2305: 47355 1                 CDUTRIG             ; FIXME: Guess based on B6-306.
+07,2305: 47355 1                 NBSM
 07,2306: 24031 0          STOVL  24D
 07,2307: 00015 0                 TAT
 07,2310: 62120 0          XCHX,1 INCR,1
@@ -1526,7 +1526,7 @@ Banksum = 00006
 07,2313: 77720 1          XCHX,1
 07,2314: 00050 1                 S1
 07,2315: 34041 0          STCALL TDEC1
-07,2316: 47355 1                 CDUTRIG             ; FIXME: Guess based on B6-306.
+07,2316: 47355 1                 NBSM
 07,2317: 77635 1          VXV
 07,2320: 00031 0                 24D
 07,2321: 53476 1          VCOMP  UNIT
@@ -3887,7 +3887,7 @@ Banksum = 00010
 11,2022: 77614 1 INITVEL  SET
 11,2023: 00475 1                 GUESSW
 11,2024: 77620 0 HAVEGUES STQ                        ; This coding is different from Luminary.
-11,2025: 03452 1                 NORMEX
+11,2025: 03452 1                 RTRN                ; NORMEX in Luminary (guess based off of B4-302)
 11,2026: 43130 1          SXA,1  BOFF
 11,2027: 03564 0                 UE7,1564
 11,2030: 00355 1                 B29FLAG
@@ -4058,7 +4058,7 @@ Banksum = 00010
 11,2263: 00001 0                 0D
 11,2264: 03564 0                 UE7,1564
 11,2265: 77650 1          GOTO
-11,2266: 03452 1                 NORMEX
+11,2266: 03452 1                 RTRN                ; NORMEX in Luminary (guess based off of B4-302)
 
 11,2267: 00000 1 ZUNIT    2DEC   0
 11,2270: 00000 1

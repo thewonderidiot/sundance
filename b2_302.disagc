@@ -2787,7 +2787,7 @@ Banksum = 77770
 10,2276: 35026 0          CAF    ONE
 10,2277: 54164 0          TS     COPINDEX
 10,2300: 31022 0          CA     MONSAVE1
-10,2301: 75011 0          MASK   BIT4
+10,2301: 75011 0          MASK   BIT14
 10,2302: 61013 1          AD     DSPLOCK
 10,2303: 10000 0          CCS    A
 10,2304: 13267 0          TCF    IMMEDRET -1

@@ -6772,7 +6772,7 @@ Banksum = 00026
 27,3702: 06035 1 ENDT(X)  TC     DANZIG
                  TCDANZIG =      ENDT(X)
 
-27,3703: 30305 1 U27,3703 2OCT   30305 24405         ; FIXME: not defined in Luminary
+27,3703: 30305 1 U27,3703 2DEC   3.04825219 B-2      ; FIXME: Scaling? Unreferenced (?) and not defined in Luminary.
 27,3704: 24405 0
 27,3705: 06220 1 PI/16    2DEC   3.141592653 B-4
 27,3706: 37553 0

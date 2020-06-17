@@ -5210,7 +5210,7 @@ Banksum = 00041
 42,2673: 00000 1          OCT    00000
 42,2674: 03562 0          ECADR  DELVTPI             ; SPARE in Luminary. N53 R1.
 42,2675: 03564 0          ECADR  DELVTPF             ; SPARE in Luminary. N53 R2.
-42,2676: 03737 1          ECADR  UE7,1737            ; SPARE in Luminary. N53 R3.
+42,2676: 03737 1          ECADR  N53R3               ; SPARE in Luminary. N53 R3.
 42,2677: 02206 1          ECADR  RANGE
 42,2700: 02210 0          ECADR  RRATE
 42,2701: 02212 1          ECADR  RTHETA
@@ -5219,7 +5219,7 @@ Banksum = 00041
 42,2704: 03605 1          ECADR  CENTANG
 42,2705: 03453 0          ECADR  NN                  ; RR-AZ in Luminary 69.
 42,2706: 02264 0          ECADR  ELEV                ; RR-ELEV in Luminary 69.
-42,2707: 03745 1          ECADR  UE7,1745            ; SPARE in Luminary 69.
+42,2707: 03745 1          ECADR  N56R3               ; SPARE in Luminary 69.
 42,2710: 02316 1          ECADR  DELTAR
 42,2711: 00000 1          OCT    0
 42,2712: 00000 1          OCT    0
@@ -5256,7 +5256,7 @@ Banksum = 00041
 42,2751: 02422 1          ECADR  RANGEDSP
 42,2752: 03521 1          ECADR  TTFDISP
 42,2753: 02424 1          ECADR  DELTAH
-42,2754: 01245 0          ECADR  UNK1245             ; SPARE in Luminary 69.
+42,2754: 01245 0          ECADR  ABDELV              ; SPARE in Luminary 69.
 42,2755: 01201 0          ECADR  DVTHRUSH            ; SPARE in Luminary 69.
 42,2756: 03466 0          ECADR  DVTOTAL             ; SPARE in Luminary 69.
 42,2757: 00735 0          ECADR  AOTCODE
@@ -5322,18 +5322,18 @@ Banksum = 00041
 42,3053: 02206 1          ECADR  RANGE
 42,3054: 02210 0          ECADR  RRATE
 42,3055: 02212 1          ECADR  RTHETA
-42,3056: 03715 1          ECADR  UE7,1715            ; SPARE in Luminary. TPI Alt.
-42,3057: 03741 0          ECADR  PITCH               ; SPARE in Luminary.
-42,3060: 03757 1          ECADR  UE7,1757            ; SPARE in Luminary. FIXME
+42,3056: 03715 1          ECADR  N91N94R1            ; SPARE in Luminary. TPI Alt.
+42,3057: 03741 0          ECADR  N91R2               ; SPARE in Luminary.
+42,3060: 03757 1          ECADR  N91R3               ; SPARE in Luminary. FIXME
 42,3061: 00007 0          OCT    7                   ; FIXME: WHAT IS THIS?
-42,3062: 03743 1          ECADR  UE7,1743
-42,3063: 03713 1          ECADR  UE7,1713
-42,3064: 02737 0          ECADR  UE5,1737
-42,3065: 02741 1          ECADR  UE5,1741
-42,3066: 02743 0          ECADR  UE5,1743
-42,3067: 03715 1          ECADR  UE7,1715
-42,3070: 03743 1          ECADR  UE7,1743
-42,3071: 03713 1          ECADR  UE7,1713
+42,3062: 03743 1          ECADR  N92N94R2
+42,3063: 03713 1          ECADR  N92N94R3
+42,3064: 02737 0          ECADR  OGC
+42,3065: 02741 1          ECADR  IGC
+42,3066: 02743 0          ECADR  MGC
+42,3067: 03715 1          ECADR  N91N94R1
+42,3070: 03743 1          ECADR  N92N94R2
+42,3071: 03713 1          ECADR  N92N94R3
 42,3072: 01206 1          ECADR  THETAD              ; FIXME
 42,3073: 01207 0          ECADR  THETAD +1           ; FIXME
 42,3074: 01210 0          ECADR  THETAD +2           ; FIXME

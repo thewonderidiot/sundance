@@ -471,7 +471,7 @@
 36,2570: 00006 1 P63ZOOM  EXTEND
 36,2571: 33122 0          DCA    LUNLANAD
 36,2572: 53253 0          DXCH   AVEGEXIT
-M
+
 36,2573: 05600 1          TC     DOWNFLAG            ; This flag clearing is not done in Luminary, and
 36,2574: 00144 0          ADRES  KILLROSE            ; the KILLROSE flag no longer exists.
 

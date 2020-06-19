@@ -1392,7 +1392,7 @@ Banksum = 77777
 01,2136: 03651 0          2CADR  NORMBIAS
 01,2137: 14063 1
 01,2140: 00310 0          DEC    200
-                          EBANK=
+                          EBANK= DVCNTR
 01,2141: 75310 1         -2CADR  REREADAC
 01,2142: 11710 1
 
@@ -1414,7 +1414,7 @@ Banksum = 77777
                           EBANK= TIG
 01,2155: 75044 0         -2CADR  CLOKTASK
 01,2156: 03710 1
-01,2157: 30000 1 6.5SPOTA OCT    30000
+01,2157: 30000 1 6.5SPOT  OCT    30000
                           EBANK= TEPHEM
 01,2160: 03417 0          2CADR  TIMEDIDR
 01,2161: 10063 0
@@ -5233,7 +5233,7 @@ BANKSUM = 00003
 04,2066: 05575 0          TC     DOWNFLAG
 04,2067: 00163 0          ADRES  AVEGFLAG
 
-04,2070: 32305 0          CAF    V37RETAD
+04,2070: 32305 0          CAF    CANV37AD
 04,2071: 55262 1          TS     OUTROUTE
 
 04,2072: 15225 0          TCF    ENDOFJOB
@@ -5433,7 +5433,7 @@ BANKSUM = 00003
 
 04,2303: 10252 0 V37QCAD  CADR   V37XEQ +3
 04,2304: 10107 0 ROOAD    CADR   DUMMYAD
-04,2305: 10073 1 V37RETAD CADR   CANV37              ; V37RET in Luminary.
+04,2305: 10073 1 CANV37AD CADR   CANV37              ; V37RET in Luminary.
                                                      
                                                      ; OCT37667 and OCT40072 are defined here
                                                      ; in Luminary.
@@ -5667,6 +5667,7 @@ BANKSUM = 00003
 04,2616: 00015 0                 12D
 04,2617: 77752 1          VSL2
 04,2620: 53445 1          BVSU   UNIT
+                                                     ; An additional UNIT is here in Luminary 69.
 04,2621: 50206 0          PUSH   DOT
 04,2622: 00001 0                 00D
 04,2623: 65552 0          SL1    ARCCOS
@@ -6033,7 +6034,7 @@ BANKSUM = 00003
 04,3321: 00006 1          EXTEND                     ; Replaced with CCS A; TC Q; INDEX Q; TC 0 -6
 04,3322: 13324 0          BZF    +2                  ; in Luminary.
 04,3323: 00002 0          TC     Q
-04,3324: 46216 0          CS     6
+04,3324: 46216 0          CS     SIX
 04,3325: 60002 0          AD     Q
 04,3326: 00000 1          TC     A
 
@@ -6140,7 +6141,7 @@ BANKSUM = 00003
 04,3446: 50301 0          INDEX  UPTEMP
 04,3447: 00001 0          TC     1
 
-04,3450: 43504 1 UPEND71  CS     UPDATLIM            ; This check was removed for Luminary 69.
+04,3450: 43504 1 UPEND71  CS     ENDSAFE             ; This check was removed for Luminary 69.
 04,3451: 60307 0          AD     UPBUFF +1
 04,3452: 00006 1          EXTEND
 04,3453: 63621 1          BZMF   UPERROUT
@@ -6172,7 +6173,7 @@ BANKSUM = 00003
 04,3501: 10154 0          CCS    MPAC
 04,3502: 13471 1          TCF    STORLP71
 04,3503: 13552 1          TCF    UPOUT
-04,3504: 01074 0 LENDSAFE ADRES  ENDSAFE             ; FIXME: Both labels are guesses.
+04,3504: 01074 0 ENDSAFE  ADRES  R1SAVE              ; FIXME: Both labels are guesses.
 04,3505: 13552 1          TCF    UPOUT
 
 04,3506: 35026 0 UPEND72  CAF    BIT1
@@ -6187,7 +6188,7 @@ BANKSUM = 00003
 04,3517: 50000 1          INDEX  A
 04,3520: 30306 1          CAE    UPBUFF
 04,3521: 56001 0          XCH    L
-04,3522: 43504 1          CS     LENDSAFE
+04,3522: 43504 1          CS     ENDSAFE
 04,3523: 60001 0          AD     L
 04,3524: 00006 1          EXTEND
 04,3525: 63621 1          BZMF   UPERROUT
@@ -6393,19 +6394,19 @@ Banksum = 00004
 05,2001: 32027 0          DNPTR  LMAGSI01
 05,2002: 32043 1          DNPTR  LMAGSI02
 05,2003: 16215 0          4DNADR AGSBUFF +7
-05,2004: 32061 1          DNPTR  LMAGSI03
+05,2004: 32061 1          DNPTR  LMAGSI04
 05,2005: 00007 0          1DNADR SPARE
 05,2006: 00007 0          1DNADR SPARE
 05,2007: 00007 0          1DNADR SPARE
 05,2010: 02016 1          1DNADR AGSK
-05,2011: 32063 0          DNPTR  LMAGSI04
+05,2011: 32063 0          DNPTR  LMAGSI05
 05,2012: 00024 1          1DNADR TIME2
-05,2013: 32045 1          DNPTR  LMAGSI05
+05,2013: 32045 1          DNPTR  LMAGSI03
 05,2014: 32043 1          DNPTR  LMAGSI02
 05,2015: 05205 0          2DNADR REDOCTR
 05,2016: 00007 0          1DNADR SPARE
 05,2017: 00007 0          1DNADR SPARE
-05,2020: 32061 1          DNPTR  LMAGSI03
+05,2020: 32061 1          DNPTR  LMAGSI04
 05,2021: 00007 0          1DNADR SPARE
 05,2022: 00007 0          1DNADR SPARE
 05,2023: 00007 0          1DNADR SPARE
@@ -6432,7 +6433,7 @@ Banksum = 00004
 05,2043: 24340 0 LMAGSI02 6DNADR DNTMBUFF
 05,2044: 57423 0         -5DNADR DNTMBUFF +12D
 
-05,2045: 76556 0 LMAGSI05-1DNADR RN +2
+05,2045: 76556 0 LMAGSI03-1DNADR RN +2
 05,2046: 01223 0          1DNADR RN +4
 05,2047: 01225 0          1DNADR VN
 05,2050: 01227 1          1DNADR VN +2
@@ -6445,13 +6446,13 @@ Banksum = 00004
 05,2057: 00007 0          1DNADR SPARE
 05,2060: 76560 0         -1DNADR RN
 
-05,2061: 24302 0 LMAGSI03 6DNADR COMPNUMB
+05,2061: 24302 0 LMAGSI04 6DNADR COMPNUMB
 05,2062: 53461 1         -6DNADR UPBUFF +8D
 
-                 LMCSTA03 =      LMAGSI04
-                 LMPWRD03 =      LMAGSI04
-                 LMREND03 =      LMAGIS04
-05,2063: 01243 0 LMAGSI04 1DNADR MASS
+                 LMCSTA03 =      LMAGSI05
+                 LMPWRD03 =      LMAGSI05
+                 LMREND03 =      LMAGSI05
+05,2063: 01243 0 LMAGSI05 1DNADR MASS
 05,2064: 01432 0          1DNADR RSBBQ
 05,2065: 04036 0          2DNADR CDUS
 05,2066: 04032 1          2DNADR CDUX
@@ -6507,7 +6508,7 @@ Banksum = 00004
 05,2137: 03236 0          1DNADR ACCSET
 05,2140: 03240 1          1DNADR CDUYD
 05,2141: 03016 0          1DNADR OMEGAP
-05,2142: 03020 0          1DNADR OMEGAQ
+05,2142: 03020 0          1DNADR OMEGAR
 05,2143: 01322 0          1DNADR LASTYCMD
 05,2144: 76056 0         -1DNADR R-OTHER
 

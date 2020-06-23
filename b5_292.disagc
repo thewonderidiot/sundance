@@ -1519,7 +1519,7 @@ Banksum = 00030
 
                                                      ; Luminary defines GUIDSUB here
 
-31,2500: 05373 0 LUNLAND  TC     2PHASCHNG           ; Done as two individual PHASCHNGs in Luminary
+31,2500: 05373 0 LUNLAND  TC     2PHSCHNG            ; Done as two individual PHASCHNGs in Luminary
 31,2501: 00035 1          OCT    00035
 31,2502: 05022 1          OCT    05022               ; 5023 in Luminary
 31,2503: 21000 1          OCT    21000
@@ -1724,7 +1724,7 @@ Banksum = 00030
 31,2752: 20155 1          DAS    MPAC
 31,2753: 52155 1          DXCH   MPAC
 31,2754: 07516 1          TC     ALSIGNAG
-31,2755: 55703 0          TS     UE7,1703
+31,2755: 55703 0          TS     RLEMT2
 
 31,2756: 03562 0          TC     FASTCHNG
 
@@ -2361,11 +2361,11 @@ Banksum = 00031
                           EBANK=
 
 32,2000: 05575 0 P10      TC     DOWNFLAG
-32,2001: 00140 1          ADRES  2PHASFLG            ; FIXME: Make up different name for this!
+32,2001: 00140 1          ADRES  LTCPFLG            ; FIXME: Make up different name for this!
 32,2002: 02005 0          TC     P10/P11
 
 32,2003: 05563 1 P11      TC     UPFLAG
-32,2004: 00140 1          ADRES  2PHASFLG
+32,2004: 00140 1          ADRES  LTCPFLG
 
 32,2005: 00006 1 P10/P11  EXTEND
 32,2006: 31423 0          DCA    TIG(AS)
@@ -2378,7 +2378,7 @@ Banksum = 00031
 32,2013: 32664 1          CAF    V06N81AP
 32,2014: 02643 1          TC     VNDISP
 
-32,2015: 30140 1          CA     DSPMMTEM            ; FIXME: label?
+32,2015: 30140 1          CA     DSPMMTEM
 32,2016: 00006 1          EXTEND
 32,2017: 12032 0          BZF    P10DISPS
 
@@ -2411,20 +2411,20 @@ Banksum = 00031
 32,2043: 43345 1          DLOAD  DAD
 32,2044: 03423 1                 TIG(AS)
 32,2045: 03744 0                 N92N94R2
-32,2046: 03674 1          STORE  UE7,1673
+32,2046: 03674 1          STORE  TCSITPF
 32,2047: 34041 0          STCALL TDEC1
 32,2050: 27013 0                 CSMPREC
 32,2051: 77331 0          SSP    VLOAD
-32,2052: 03663 1                 UE7,1662
+32,2052: 03663 1                 P1XITCNT
 32,2053: 00000 1                 0
 32,2054: 00025 0                 VATT1
-32,2055: 17706 0          STODL  UE7,1705
+32,2055: 17706 0          STODL  VCSMINT
 32,2056: 03716 1                 N91N94R1
 32,2057: 43312 0          SL2    DAD
 32,2060: 24564 0                 P10RM
-32,2061: 27704 1          STOVL  UE7,1703
+32,2061: 27704 1          STOVL  RLEMT2
 32,2062: 00017 1                 RATT1
-32,2063: 03664 0          STORE  UE7,1663
+32,2063: 03664 0          STORE  RCSMINT
 32,2064: 53435 0          VXV    UNIT
 32,2065: 00025 0                 VATT1
 32,2066: 17762 1          STODL  UNVEC
@@ -2434,10 +2434,10 @@ Banksum = 00031
 32,2072: 17740 1          STODL  N53R3
 32,2073: 43021 0          BDSU   SET
 32,2074: 03423 1                 TIG(AS)
-32,2075: 00474 0                 SLOPESW             ; Or ITER1SW
+32,2075: 00474 0                 SLOPESW
 32,2076: 17427 0          STODL  UE7,1426
 32,2077: 06233 0                 ZEROVECS
-32,2100: 03756 0          STORE  UE7,1755
+32,2100: 03756 0          STORE  P1XDT
 
 32,2101: 77601 0 P1XLOOP  SETPD
 32,2102: 00001 0                 0
@@ -2452,20 +2452,20 @@ Banksum = 00031
 32,2113: 57552 1          SL1    VCOMP
 32,2114: 77655 1          VAD
 32,2115: 72056 1          UNIT   LXA,1
-32,2116: 03662 0                 UE7,1662
+32,2116: 03662 0                 P1XITCNT
 32,2117: 66110 1          INCR,1 SXA,1
 32,2120: 00001 0                 1
-32,2121: 03662 0                 UE7,1662
+32,2121: 03662 0                 P1XITCNT
 32,2122: 37750 1          STCALL ULVEC
 32,2123: 64516 1                 P1XROT  
 32,2124: 77624 1          CALL
 32,2125: 27361 0                 INTSTALL
 32,2126: 43175 0          VLOAD  SET
-32,2127: 03706 0                 UE7,1705
+32,2127: 03706 0                 VCSMINT
 32,2130: 00063 1                 MOONFLAG
 32,2131: 01543 1          STORE  VCV
 32,2132: 43175 0          VLOAD  SET
-32,2133: 03664 0                 UE7,1663
+32,2133: 03664 0                 RCSMINT
 32,2134: 01473 0                 INTYPFLG
 32,2135: 15535 0          STODL  RCV
 32,2136: 06233 0                 ZEROVECS
@@ -2473,16 +2473,16 @@ Banksum = 00031
 32,2140: 03423 1                 TIG(AS)
 32,2141: 45215 0          DAD    DSU
 32,2142: 03744 0                 N92N94R2
-32,2143: 03674 1                 UE7,1673
+32,2143: 03674 1                 TCSITPF
 32,2144: 34041 0          STCALL TDEC1
 32,2145: 27057 0                 INTEGRVS
 32,2146: 77214 0          BOFF   VLOAD
-32,2147: 03346 0                 2PHASFLG
+32,2147: 03346 0                 LTCPFLG
 32,2150: 64210 0                 P10CSI
 32,2151: 00017 1                 RATT1
 32,2152: 01772 1          STORE  RTARG
 32,2153: 63256 0          UNIT   PDVL
-32,2154: 03724 0                 UE7,1723
+32,2154: 03724 0                 RP1XROT
 32,2155: 50256 0          UNIT   DOT
 32,2156: 65552 0          SL1    ACOS
 32,2157: 51515 1          PDVL   ABVAL
@@ -2495,7 +2495,7 @@ Banksum = 00031
 32,2166: 64477 1                 P11SMA
 32,2167: 47375 0          VLOAD  VXV
 32,2170: 00017 1                 RATT1
-32,2171: 03724 0                 UE7,1723
+32,2171: 03724 0                 RP1XROT
 32,2172: 65241 0          DOT    PDDL
 32,2173: 03762 1                 UNVEC
 32,2174: 00003 1                 2D
@@ -2507,7 +2507,7 @@ Banksum = 00031
 32,2202: 75205 1          DMP    SIGN
 32,2203: 24562 0                 P1XPI
 32,2204: 41502 0          SR2    PUSH
-32,2205: 03756 0          STORE  UE7,1755
+32,2205: 03756 0          STORE  P1XDT
 32,2206: 77650 1          GOTO
 32,2207: 64341 0                 P1XCONV 
 
@@ -2515,11 +2515,11 @@ Banksum = 00031
 32,2211: 03423 1                 TIG(AS)
 32,2212: 03744 0                 N92N94R2
 32,2213: 27621 1          STOVL  TCSI
-32,2214: 03724 0                 UE7,1723
+32,2214: 03724 0                 RP1XROT
 32,2215: 43142 1          SR1    SET
 32,2216: 01072 0                 AVFLAG
 32,2217: 26317 0          STOVL  RACT1
-32,2220: 03732 1                 UE7,1731
+32,2220: 03732 1                 VP1XROT
 32,2221: 77742 0          VSR2
 32,2222: 27457 1          STOVL  VACT1
 32,2223: 00001 0                 0
@@ -2534,7 +2534,7 @@ Banksum = 00031
 32,2233: 03465 0                 RPASS1
 32,2234: 03621 1                 TCSI
 32,2235: 65325 0          PDDL   PDDL
-32,2236: 03623 0                 TTPI                ; FIXME: label?
+32,2236: 03623 0                 TTPI
 32,2237: 33634 0                 TWOPI
 32,2240: 77006 1          PUSH   AXT,2
 32,2241: 00002 0                 2
@@ -2559,7 +2559,7 @@ Banksum = 00031
 32,2264: 67061 1          SR     SXA,2
 32,2265: 20607 1                 6D
 32,2266: 02333 0                 RTX2
-32,2267: 36337 0          STCALL RTMU                ; FIXME: label?
+32,2267: 36337 0          STCALL RTMU
 32,2270: 70077 0                 CSI/A
 
 32,2271: 53135 0 P10ALARM SLOAD  BZE
@@ -2571,16 +2571,16 @@ Banksum = 00031
 
 32,2276: 45345 1 P10ITER  DLOAD  DSU
 32,2277: 03746 1                 N56R3
-32,2300: 03567 0                 DIFFALT             ; FIXME: label?
+32,2300: 03567 0                 DIFFALT
 32,2301: 26760 1          STOVL  DELDEP
 32,2302: 02303 0                 DELVEET1
 32,2303: 77646 0          ABVAL
-32,2304: 27563 1          STOVL  DELVTPI             ; FIXME: label?
+32,2304: 27563 1          STOVL  DELVTPI
 32,2305: 02311 0                 DELVEET2
 32,2306: 40246 0          ABVAL  SETPD
 32,2307: 00001 0                 0
-32,2310: 17565 1          STODL  DELVTPF             ; FIXME: label?
-32,2311: 03756 0                 UE7,1755
+32,2310: 17565 1          STODL  DELVTPF
+32,2311: 03756 0                 P1XDT
 32,2312: 14015 0          STODL  DELINDEP
 32,2313: 03740 1                 N53R3
 32,2314: 14017 1          STODL  MAX
@@ -2590,7 +2590,7 @@ Banksum = 00031
 32,2320: 14051 0          STODL  TWEEKIT
 32,2321: 03423 1                 TIG(AS)
 32,2322: 16766 1          STODL  INDEP
-32,2323: 03567 0                 DIFFALT             ; FIXME: label?
+32,2323: 03567 0                 DIFFALT
 32,2324: 00037 0          STORE  DEP
 32,2325: 45014 0          CLEAR  CALL
 32,2326: 04271 1                 ORDERSW
@@ -2599,25 +2599,25 @@ Banksum = 00031
 32,2331: 03567 0                 DIFFALT
 32,2332: 16762 0          STODL  DEPREV
 32,2333: 00017 1                 MAX
-32,2334: 17740 1          STODL  N53R3
+32,2334: 17740 1          STODL  P1XMAX
 32,2335: 00011 1                 MIN
 32,2336: 17427 0          STODL  UE7,1426
 32,2337: 00015 0                 DELINDEP
-32,2340: 03756 0          STORE  UE7,1755
+32,2340: 03756 0          STORE  P1XDT
 
 32,2341: 77646 0 P1XCONV  ABVAL
 32,2342: 50025 0          DSU    BMN
 32,2343: 24554 0                 ONESEC
 32,2344: 64361 1                 P1XFINAL
 32,2345: 54335 0          SLOAD  SR
-32,2346: 03663 1                 UE7,1662
+32,2346: 03663 1                 P1XITCNT
 32,2347: 20617 0                 14D
 32,2350: 51025 1          DSU    BPL
 32,2351: 24552 0                 P1MAXIT 
 32,2352: 64466 1                 P1XERR
 32,2353: 43345 1          DLOAD  DAD
 32,2354: 03423 1                 TIG(AS)
-32,2355: 03756 0                 UE7,1755
+32,2355: 03756 0                 P1XDT
 32,2356: 03423 1          STORE  TIG(AS)
 32,2357: 77650 1          GOTO
 32,2360: 64101 0                 P1XLOOP
@@ -2635,7 +2635,7 @@ Banksum = 00031
 32,2373: 54205 1          DMP    SL
 32,2374: 24562 0                 P1XPI
 32,2375: 20206 1                 5D
-32,2376: 17740 1          STODL  N53R3
+32,2376: 17740 1          STODL  P1XMAX
 32,2377: 03423 1                 TIG(AS)
 32,2400: 45214 1          SET    DSU
 32,2401: 03075 0                 ASCNTFLG
@@ -2643,7 +2643,7 @@ Banksum = 00031
 32,2403: 17427 0          STODL  UE7,1426
 32,2404: 03423 1                 TIG(AS)
 32,2405: 43006 0          PUSH   BON
-32,2406: 03306 1                 2PHASFLG
+32,2406: 03306 1                 LTCPFLG
 32,2407: 64420 0                 P11DISP
 32,2410: 77615 0          DAD
 32,2411: 03744 0                 N92N94R2
@@ -2656,13 +2656,13 @@ Banksum = 00031
 
 32,2420: 77615 0 P11DISP  DAD
 32,2421: 03742 0                 N91R2
-32,2422: 03577 1          STORE  UE7,1576            ; GAMPREV or INTIME?
-32,2423: 17623 0          STODL  TTPI                ; FIXME: label?
+32,2422: 03577 1          STORE  INTIME
+32,2423: 17623 0          STODL  TTPI
 32,2424: 03760 0                 N91R3
 32,2425: 17714 0          STODL  N92N94R3
 32,2426: 03744 0                 N92N94R2
 32,2427: 45415 0          DAD    STADR
-32,2430: 40103 1          STCALL UE7,1673
+32,2430: 40103 1          STCALL TCSITPF
 32,2431: 64516 1                 P1XROT  
 32,2432: 67201 0          SETPD  SLOAD
 32,2433: 00001 0                 0
@@ -2676,20 +2676,20 @@ Banksum = 00031
 32,2443: 03744 0                 N92N94R2
 32,2444: 03742 0                 N91R2
 32,2445: 26355 0          STOVL  DELLT4
-32,2446: 03724 0                 UE7,1723
+32,2446: 03724 0                 RP1XROT
 32,2447: 26341 0          STOVL  RINIT
-32,2450: 03732 1                 UE7,1731
+32,2450: 03732 1                 VP1XROT
 32,2451: 36347 1          STCALL VINIT
 32,2452: 22022 1                 INITVEL
 32,2453: 70575 1          VLOAD  VSR2
 32,2454: 03370 0                 DELVEET3
 32,2455: 77646 0          ABVAL
-32,2456: 27563 1          STOVL  DELVTPI             ; FIXME: label?
-32,2457: 03553 1                 VACT4               ; FIXME: label?
+32,2456: 27563 1          STOVL  DELVTPI
+32,2457: 03553 1                 VACT4
 32,2460: 70451 0          VSU    VSR2
 32,2461: 03770 1                 UE7,1767
 32,2462: 77646 0          ABVAL
-32,2463: 03565 1          STORE  DELVTPF             ; FIXME: label?
+32,2463: 03565 1          STORE  DELVTPF
 
 32,2464: 77776 1 P1XEND   EXIT
 32,2465: 02600 0          TC     P1XDISP
@@ -2735,18 +2735,18 @@ Banksum = 00031
 32,2531: 74256 0          UNIT   VXSC
 32,2532: 77655 1          VAD
 32,2533: 72561 0          VXSC   VSL2
-32,2534: 03704 1                 UE7,1703
-32,2535: 03724 0          STORE  UE7,1723
+32,2534: 03704 1                 RLEMT2
+32,2535: 03724 0          STORE  RP1XROT
 32,2536: 74256 0          UNIT   VXSC
 32,2537: 03720 1                 UE7,1717
 32,2540: 53515 0          PDVL   UNIT
-32,2541: 03724 0                 UE7,1723
+32,2541: 03724 0                 RP1XROT
 32,2542: 74235 0          VXV    VXSC
 32,2543: 03762 1                 UNVEC
 32,2544: 03722 0                 UE7,1721
 32,2545: 52372 0          VSL1   VSU
 32,2546: 66476 1          VCOMP  VSL3
-32,2547: 03732 1          STORE  UE7,1731
+32,2547: 03732 1          STORE  VP1XROT
 32,2550: 77616 0          RVQ
 
                  P10ZERO  =      P1MAXIT
@@ -2788,7 +2788,7 @@ Banksum = 00031
 32,2611: 32661 1          CAF    V06N37AP
 32,2612: 02643 1          TC     VNDISP
 
-32,2613: 31673 1          CA     UE7,1673
+32,2613: 31673 1          CA     TCSITPF
 32,2614: 55046 0          TS     DSPTEM1
 32,2615: 32660 0          CAF    V06N34AP
 32,2616: 02643 1          TC     VNDISP
@@ -5297,7 +5297,7 @@ Banksum = 00033
 34,2774: 70111 1                 CSI/B
 
 34,2775: 52014 0 U34,2775 BOFF   GOTO                ; This chunk is not present in Luminary
-34,2776: 03346 0                 2PHASFLG
+34,2776: 03346 0                 LTCPFLG
 34,2777: 64271 1                 P10ALARM
 34,3000: 72211 0                 P32/P72C
 
@@ -5943,7 +5943,7 @@ Banksum = 00034
 35,2125: 03600 1                 CSIALRM
 35,2126: 43140 0 ALMXIT   LXC,1  BOFF                ; Luminary doesn't have the BOFF here
 35,2127: 03600 1                 CSIALRM
-35,2130: 03346 0                 2PHASFLG
+35,2130: 03346 0                 LTCPFLG
 35,2131: 64271 1                 P10ALARM
 35,2132: 77533 1          SLOAD* EXIT
 35,2133: 32456 1                 ALARM/TB -1,1
@@ -5975,7 +5975,7 @@ Banksum = 00034
 35,2165: 37425 0          STCALL TIG
 35,2166: 20045 1                 SELECTMU
 35,2167: 45014 0 P32/P72B SET    CALL                ; This flag is not set in Luminary
-35,2170: 03066 1                 2PHASFLG
+35,2170: 03066 1                 LTCPFLG
 35,2171: 71001 0                 ADVANCE
 35,2172: 77201 1          SETPD  VLOAD
 35,2173: 00001 0                 0D

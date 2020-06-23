@@ -6450,7 +6450,7 @@ Banksum = 00004
 05,2062: 53461 1         -6DNADR UPBUFF +8D
 
                  LMCSTA03 =      LMAGSI05
-                 LMPWRD03 =      LMAGSI05
+                 LMPWRD05 =      LMAGSI05
                  LMREND03 =      LMAGSI05
 05,2063: 01243 0 LMAGSI05 1DNADR MASS
 05,2064: 01432 0          1DNADR RSBBQ
@@ -6460,7 +6460,7 @@ Banksum = 00004
 05,2070: 52753 1         -6DNADR DSPTAB
 
                  LMCSTA05 =      LMAGSI06
-                 LMPWRD05 =      LMAGSI06
+                 LMPWRD06 =      LMAGSI06
                  LMREND05 =      LMAGSI06
 05,2071: 10372 0 LMAGSI06 3DNADR CADRFLSH
 05,2072: 04032 1          2DNADR CDUX
@@ -6538,9 +6538,9 @@ Banksum = 00004
 05,2170: 05205 0          2DNADR REDOCTR
 05,2171: 07245 0          2DNADR OMEGAPD
 05,2172: 13710 0          3DNADR VRPREV
-05,2173: 32063 0          DNPTR  LMPWRD03
+05,2173: 32063 0          DNPTR  LMPWRD05
 05,2174: 00024 1          1DNADR TIME2
-05,2175: 32145 0          DNPTR  LMPWRD04
+05,2175: 32145 0          DNPTR  LMPWRD03
 05,2176: 32043 1          DNPTR  LMPWRD02
 05,2177: 05342 1          2DNADR DNLRVELX
 05,2200: 03424 0          1DNADR TIG
@@ -6556,7 +6556,7 @@ Banksum = 00004
 05,2212: 03615 0          1DNADR TPASS4
 05,2213: 01101 0          1DNADR RADMODES
 05,2214: 03021 1          1DNADR ALPHAQ
-05,2215: 45706 1         -DNPTR  LMPWRD05
+05,2215: 45706 1         -DNPTR  LMPWRD06
 
                  LMRENDDL EQUALS
 05,2216: 32131 0          DNPTR  LMREND01
@@ -6580,7 +6580,7 @@ Banksum = 00004
 05,2240: 32043 1          DNPTR  LMREND02
 05,2241: 05342 1          2DNADR DNLRVELX
 05,2242: 03424 0          1DNADR TIG
-05,2243: 12266 0          3DNADR DELVLVC
+05,2243: 12266 0          3DNADR DELVSLV
 05,2244: 03605 1          1DNADR CENTANG
 05,2245: 03375 0          1DNADR TCDH
 05,2246: 12310 0          3DNADR DELVEET2
@@ -6679,7 +6679,7 @@ Banksum = 00004
 05,2361: 54003 0          TS     EBANK
                           EBANK= HIASCENT
 
-                                                     ; Luminary intializeds STIKSENS and -RATEDB here.
+                                                     ; Luminary intializes STIKSENS and -RATEDB here.
 05,2362: 32675 1          CAF    FULLAPS
 05,2363: 55400 0          TS     HIASCENT
 05,2364: 32673 1          CA     77001OCT
@@ -6847,10 +6847,10 @@ Banksum = 00004
 05,2603: 57101 0          XCH    RADMODES
 05,2604: 77712 0          MASK   -BIT12
 05,2605: 27101 1          ADS    RADMODES
-05,2606: 37667 1          CA     PRIO27              ; FIXME: What job is this starting?
+05,2606: 37667 1          CA     PRIO27
 05,2607: 05142 0          TC     NOVAC
                           EBANK= AOSQ
-05,2610: 02304 1          2CADR  1/ACCJOB
+05,2610: 02304 1          2CADR  1/ACCSET
 05,2611: 40066 0
 
 05,2612: 35031 0 GOPROG3  CAF    NUMGRPS
@@ -7027,7 +7027,7 @@ Banksum = 00004
 05,3015: 54233 1          TS     PRIORITY +36D
 05,3016: 54247 1          TS     PRIORITY +48D
 05,3017: 54263 1          TS     PRIORITY +60D
-05,3020: 54277 1          TS     PRIORITY +84D
+05,3020: 54277 1          TS     PRIORITY +72D
                                                      ; Luminary sets an additional PRIORITY here.
 05,3021: 55315 0          TS     DSRUPTSW
 05,3022: 54067 1          TS     NEWJOB
@@ -7234,7 +7234,7 @@ Banksum = 00004
 05,3277: 10000 0          CCS    A
 05,3300: 13263 1          TCF    SNAPLOOP
 05,3301: 03163 0 LDNPHAS2 GENADR DNPHASE2
-05,3302: 56337 0          TS     SUBLIST
+05,3302: 56337 0          XCH    SUBLIST             ; TS in Luminary.
 05,3303: 40000 0          COM                        ; CA NEGONE in Luminary.
 05,3304: 54336 0          TS     DNECADR
 05,3305: 56337 0          XCH    SUBLIST
@@ -7266,7 +7266,7 @@ Banksum = 00004
 05,3331: 10000 0          CCS    A
 05,3332: 24337 0          INCR   SUBLIST
 05,3333: 13337 1          TCF    +4
-05,3334: 56337 0          TS     SUBLIST
+05,3334: 56337 0          XCH    SUBLIST             ; TS in Luminary.
 05,3335: 40000 0          COM                        ; CA NEGONE in Luminary
 05,3336: 56337 0          XCH    SUBLIST
 05,3337: 24000 1  +4      INCR   A

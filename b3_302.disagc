@@ -1506,10 +1506,10 @@ Banksum = 00014
 15,2575: 00014 1                 12D
 15,2576: 47173 1 WRTDESIR VLOAD* RTB
 15,2577: 75040 1                 VEC1 +12D,2
-15,2600: 32745 0                 U15,2745
+15,2600: 32745 0                 UPDATFRF
 15,2601: 77614 1          BON
 15,2602: 00314 1                 FREEFLAG
-15,2603: 32774 1                 U15,2774
+15,2603: 32774 1                 MFREF   
 15,2604: 53521 1 WRTDSBAK MXV    UNIT                ; Name made up
 15,2605: 03574 1                 XSMD
 15,2606: 12723 1          STORE  STARAD +12D,2
@@ -1520,15 +1520,15 @@ Banksum = 00014
 15,2612: 00014 1                 12D
 15,2613: 47173 1 WRTDESR2 VLOAD* RTB
 15,2614: 75002 1                 STARSAV1 +12D,2
-15,2615: 32745 0                 U15,2745
+15,2615: 32745 0                 UPDATFRF
 15,2616: 77614 1          BON
 15,2617: 00314 1                 FREEFLAG
-15,2620: 33004 0                 U15,3004
-15,2621: 10023 1 WRTD2BAK STORE  18D,2               ; Name made up
+15,2620: 33004 0                 CALCANG
+15,2621: 10023 1 DOALIGN  STORE  18D,2               ; Name made up
 15,2622: 45104 0          TIX,2  CALL
 15,2623: 32613 1                 WRITDESR2           ; Name made up
-15,2624: 30521 1                 R54
-15,2625: 77624 1 DOALIGN  CALL
+15,2624: 30521 1                 DOALIGN
+15,2625: 77624 1          CALL
 15,2626: 47153 0                 AXISGEN
 15,2627: 77624 1          CALL
 15,2630: 46757 0                 CALCGTA
@@ -1561,7 +1561,7 @@ Banksum = 00014
 15,2662: 45174 1          AXT,2  CALL
 15,2663: 00014 1                 12D
 15,2664: 30667 0                 CALCSMSC
-15,2665: 61373 1 U15,2665 VLOAD* VXM
+15,2665: 61373 1 REFMF    VLOAD* VXM
 15,2666: 75070 1                 STARAD,2            ; FIXME: What is the label here?
 15,2667: 01736 1                 REFSMMAT
 15,2670: 77656 1          UNIT
@@ -1572,9 +1572,9 @@ Banksum = 00014
 15,2675: 77731 1          SSP
 15,2676: 00052 0                 S2
 15,2677: 00006 1                 6
-15,2700: 12261 1          STORE  UE4,1660,2
+15,2700: 12261 1          STORE  STARVSAV,2
 15,2701: 77304 0          TIX,2  VLOAD
-15,2702: 32665 0                 U15,2665
+15,2702: 32665 0                 REFMF
 15,2703: 02750 1                 OGCT
 15,2704: 02740 0          STORE  OGC
 15,2705: 77776 1          EXIT
@@ -1613,7 +1613,7 @@ Banksum = 00014
 15,2743: 77650 1          GOTO
 15,2744: 32644 0                 SURFDISP
 
-15,2745: 45024 0 U15,2745 CS     FREEFBIT
+15,2745: 45024 0 UPDATFRF CS     FREEFBIT
 15,2746: 70074 0          MASK   FLAGWRD0
 15,2747: 54074 0          TS     FLAGWRD0
 15,2750: 35012 1          CAF    REFSMBIT
@@ -1623,22 +1623,22 @@ Banksum = 00014
 15,2754: 61155 1          AD     OPTION1
 15,2755: 50000 1          INDEX  A
 15,2756: 35017 1          CAF    BIT8
-15,2757: 51757 0          INDEX  STARAD
-15,2760: 72770 1          MASK   U15,2770
+15,2757: 51757 0          INDEX  STARIND
+15,2760: 72770 1          MASK   FREEFTAB
 15,2761: 10000 0          CCS    A
 15,2762: 02766 1          TC     +4
 15,2763: 35024 1          CAF    FREEFBIT
 15,2764: 60074 1          AD     FLAGWRD0
 15,2765: 54074 0          TS     FLAGWRD0
-15,2766: 25757 0          INCR   STARAD
+15,2766: 25757 0          INCR   STARIND
 15,2767: 16035 0          TCF    DANZIG
 
-15,2770: 00052 0 U15,2770 OCT    00052
+15,2770: 00052 0 FREEFTAB OCT    00052
 15,2771: 00077 1          OCT    00077
 15,2772: 00042 1          OCT    00042
 15,2773: 00063 1          OCT    00063
 
-15,2774: 41401 1 U15,2774 SETPD  PUSH
+15,2774: 41401 1 MFREF    SETPD  PUSH
 15,2775: 00001 0                 0
 15,2776: 41434 1          RTB    PUSH
 15,2777: 21454 1                 LOADTIME
@@ -1647,12 +1647,12 @@ Banksum = 00014
 15,3002: 77650 1          GOTO
 15,3003: 32604 1                 WRTDSBAK
 
-15,3004: 77624 1 U15,3004 CALL
+15,3004: 77624 1 CALCANG  CALL
 15,3005: 47251 1                 CDUTRIG
 15,3006: 77624 1          CALL
 15,3007: 47415 1                 *NBSM*
 15,3010: 77650 1          GOTO
-15,3011: 32621 0                 WRTD2BAK
+15,3011: 32621 0                 DOALIGN
 
 15,3012: 01535 0 DISPGYRO VN     0693
 
@@ -1663,13 +1663,13 @@ Banksum = 00014
 15,3016: 43145 0          DLOAD  BOFF                ; Luminary doesn't have this pair
 15,3017: 22276 1                 ZEROVEC
 15,3020: 03355 1                 ASCNTFLG            ; According to LM-3 SYS
-15,3021: 33024 1                 +3
+15,3021: 33024 1                 P57A
 15,3022: 77745 1          DLOAD
 15,3023: 03425 1                 TIG                 ; GUESS
 15,3024: 01047 0 P57A     STORE  DSPTEM1
 15,3025: 77776 1          EXIT
-15,3026: 33204 1          CAF    V06N34*
-15,3027: 04655 0 P57AA    TC     BANKCALL
+15,3026: 33204 1 P57AA    CAF    V06N34 
+15,3027: 04655 0          TC     BANKCALL
 15,3030: 20406 1          CADR   GOFLASH             ; GOFLASHR in Luminary, with different jumps following
 15,3031: 03026 0          TC     P57AA
 15,3032: 03034 0          TC     +2
@@ -1687,7 +1687,7 @@ Banksum = 00014
 15,3045: 34041 0          STCALL TDEC1
 15,3046: 27030 1                 LEMPREC
 15,3047: 53575 0          VLOAD  UNIT 
-15,3050: 00001 0                 0D
+15,3050: 00001 0                 RATT
 15,3051: 37574 0          STCALL XSMD
 15,3052: 33217 0                 LSORIENT
 15,3053: 43170 0          AXT,1  BOFF
@@ -1705,7 +1705,7 @@ Banksum = 00014
 15,3067: 33071 1                 +2
 15,3070: 00001 0                 1
 15,3071: 77530 1          SXA,1  EXIT
-15,3072: 01156 1                 OPTION1
+15,3072: 01156 1                 OPTION2
 
 15,3073: 35030 1          CAF    ZERO
 15,3074: 55155 0          TS     OPTION1
@@ -1723,14 +1723,14 @@ Banksum = 00014
 15,3106: 31155 1          CA     OPTION1
 15,3107: 75025 1          MASK   BIT2
 15,3110: 10000 0          CCS    A
-15,3111: 03163 0          TC     P57OPT2
+15,3111: 03163 0          TC     BYLMATT
 15,3112: 06014 1          TC     INTPRET
 15,3113: 43014 0          BON    BON
 15,3114: 01702 0                 REFSMFLG
-15,3115: 33130 0                 P57OPT0
+15,3115: 33130 0                 GETLMATT
 15,3116: 03316 0                 ATTFLAG
-15,3117: 33145 1                 P57OPT1
-15,3120: 77776 1                 EXIT
+15,3117: 33145 1                 P57OPT0
+15,3120: 77776 1          EXIT
 15,3121: 33202 1 BADOPTN  CAF    BADOPT
 15,3122: 04655 0          TC     BANKCALL
 15,3123: 21443 1          CADR   PRIOLARM
@@ -1739,7 +1739,7 @@ Banksum = 00014
 15,3126: 03075 0          TC     DSPOPTN
 15,3127: 05225 1          TC     ENDOFJOB
 
-15,3130: 77624 1 P57OPT0  CALL                       ; FIXME: Right now I am assuming options are in order
+15,3130: 77624 1 GETLMATT CALL                       ; FIXME: Right now I am assuming options are in order
 15,3131: 47251 1                 CDUTRIG
 15,3132: 77624 1          CALL
 15,3133: 30667 0                 CALCSMSC
@@ -1747,16 +1747,16 @@ Banksum = 00014
 15,3135: 02673 1                 YNB
 15,3136: 01736 1                 REFSMMAT
 15,3137: 77656 1          UNIT
-15,3140: 26245 0          STOVL  UE4,1644
+15,3140: 26245 0          STOVL  YNBSAV
 15,3141: 02701 0                 ZNB
 15,3142: 53505 1          VXM    UNIT
 15,3143: 01736 1                 REFSMMAT
-15,3144: 02253 1          STORE  UE4,1652
+15,3144: 02253 1          STORE  ZNBSAV
 
-15,3145: 77775 1 P57OPT1  VLOAD
-15,3146: 02245 0                 UE4,1644
+15,3145: 77775 1 P57OPT0  VLOAD
+15,3146: 02245 0                 YNBSAV
 15,3147: 26723 0          STOVL  VEC1
-15,3150: 02253 1                 UE4,1652
+15,3150: 02253 1                 ZNBSAV
 15,3151: 26731 0          STOVL  VEC2
 15,3152: 22272 0                 YUNIT
 15,3153: 26761 0          STOVL  STARSAV1
@@ -1768,7 +1768,7 @@ Banksum = 00014
 15,3161: 10000 0          CCS    A
 15,3162: 02567 1          TC     SURFLINE
 
-15,3163: 41155 0 P57OPT2  CS     OPTION1
+15,3163: 41155 0 BYLMATT  CS     OPTION1
 15,3164: 75026 1          MASK   BIT1
 15,3165: 10000 0          CCS    A
 15,3166: 02524 0          TC     2STARS
@@ -1776,7 +1776,7 @@ Banksum = 00014
 
 15,3170: 06014 1 P57OPT3  TC     INTPRET
 15,3171: 57575 1          VLOAD  VCOMP
-15,3172: 02025 1                 UE4,1424
+15,3172: 02025 1                 RLS
 15,3173: 77656 1          UNIT
 15,3174: 02723 0          STORE  VEC1
 15,3175: 77776 1          EXIT
@@ -1787,7 +1787,7 @@ Banksum = 00014
 
 15,3202: 00701 1 BADOPT   OCT    00701
 15,3203: 01006 0 VB04N06  VN     406
-15,3204: 01442 1 V06N34*  VN     634
+15,3204: 01442 1 V06N34   VN     634
 
 15,3205: 41304 0 IMUCHK   CS     IMODES30            ; Here we resume matching with Luminary.
 15,3206: 75016 1          MASK   BIT9
@@ -2230,7 +2230,7 @@ Banksum = 00015
 16,2051: 41305 1          CS     IMODES33
 16,2052: 75021 0          MASK   BIT6
 16,2053: 10000 0          CCS    A
-16,2054: 12236 0          TCF    ALTDSPLY
+16,2054: 12236 0          TCF    ALTDSPLY            ; JUMPDSP in Luminary.
 16,2055: 41275 1          CS     RCSFLAGS
 16,2056: 75024 0          MASK   BIT3
 16,2057: 27275 1          ADS    RCSFLAGS
@@ -3212,7 +3212,7 @@ Banksum = 00015
 16,3563: 77377 1 -160MST6 DEC    -256
 16,3564: 75117 1 -FOURDEG DEC    -.08888
 
-16,3565: 33660 1 U16,3516 CA     -0.4D/S             ; This chunk is not in Luminary and doesn't appear to be
+16,3565: 33660 1 LOWSCALE CA     -0.4D/S             ; This chunk is not in Luminary and doesn't appear to be
 16,3566: 55464 1          TS     -RATEDB             ; referenced anywhere.
 16,3567: 41542 1          CS     E
 16,3570: 00006 1          EXTEND
@@ -3401,16 +3401,16 @@ Banksum = 77761
 17,2033: 00006 1          EXTEND
 17,2034: 02030 0          RAND   CHAN30
 17,2035: 00006 1          EXTEND
-17,2036: 12045 0          BZF    TSENSE
+17,2036: 12045 0          BZF    TSENSE +1
 
 17,2037: 35017 1          CA     DRIFTBIT
 17,2040: 71102 1          MASK   DAPBOOLS
 17,2041: 10000 0          CCS    A
-17,2042: 12045 0          TCF    TSENSE
-17,2043: 65025 0          AD     TWO
-17,2044: 55472 0 TSSNSTYP TS     SENSETYP
+17,2042: 12045 0          TCF    TSENSE +1
 
-17,2045: 11734 1 TSENSE   CCS    ANYTRANS
+17,2043: 65025 0          AD     TWO
+17,2044: 55472 0 TSENSE   TS     SENSETYP
+17,2045: 11734 1          CCS    ANYTRANS
 17,2046: 12051 0          TCF    +3
 17,2047: 55736 0          TS     POLYTEMP
 17,2050: 12073 0          TCF    TSNEXTS
@@ -3524,7 +3524,7 @@ Banksum = 77761
 17,2205: 65031 0 -XTRANS  AD     FIVE                ; FOUR in Luminary
 17,2206: 55734 1          TS     ANYTRANS
 17,2207: 66066 1          AD     NEG4
-17,2210: 12044 1          TCF    TSSNSTYP
+17,2210: 12044 1          TCF    TSENSE
 
 17,2211: 35024 1 TRANS4   CA     FOUR
 17,2212: 12063 1          TCF    TSNUMBRT

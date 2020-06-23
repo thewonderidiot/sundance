@@ -1334,7 +1334,7 @@ Banksum = 00006
 07,2043: 14670 0          TCF    SWRETURN
 
 07,2044: 05716 1 MKABORT  TC     ABORT               ; BAILOUT1 in Luminary. Luminary first does DXCH BUF2.
-07,2045: 01211 1          oct    01211
+07,2045: 01211 1          OCT    01211
 
 07,2046: 35030 1 MKRELEAS CAF    ZERO
 07,2047: 57314 0          XCH    MARKSTAT
@@ -1516,7 +1516,7 @@ Banksum = 00006
 07,2301: 77201 1          SETPD  VLOAD
 07,2302: 00001 0                 0
 07,2303: 00023 0                 18D
-07,2304: 34041 0          STCALL TDEC1
+07,2304: 34041 0          STCALL 32D
 07,2305: 47355 1                 NBSM
 07,2306: 24031 0          STOVL  24D
 07,2307: 00015 0                 TAT
@@ -3866,16 +3866,16 @@ Banksum = 77770
 Banksum = 00010
 
                           BANK   11
-11,2000: 01252 0 EPSFOUR  2DEC   .0416666666         ; FIXME: Is this EPSFOUR? The octals match, but context doesn't.
+11,2000: 01252 0 EPSFOUR  2DEC   .0416666666
 11,2001: 25253 1
-11,2002: 43001 1 U11,2002 SETPD  CLEAR               ; FIXME: What is this?
+11,2002: 43001 1 PREINITV SETPD  CLEAR
 11,2003: 00001 0                 0
 11,2004: 00275 1                 B29FLAG
 11,2005: 63325 0          PDDL   PDVL
 11,2006: 22001 0                 EPSFOUR
-11,2007: 03523 0                 UE7,1522            ; FIXME: RACT3?
+11,2007: 03523 0                 RACT3
 11,2010: 26341 0          STOVL  RINIT
-11,2011: 03531 0                 UE7,1530            ; FIXME: VACT3?
+11,2011: 03531 0                 VACT3
 11,2012: 02347 0          STORE  VINIT
 11,2013: 43160 1          AXC,1  BOFF
 11,2014: 00002 0                 2D
@@ -3889,7 +3889,7 @@ Banksum = 00010
 11,2024: 77620 0 HAVEGUES STQ                        ; This coding is different from Luminary.
 11,2025: 03452 1                 RTRN                ; NORMEX in Luminary (guess based off of B4-302)
 11,2026: 43130 1          SXA,1  BOFF
-11,2027: 03564 0                 UE7,1564
+11,2027: 03564 0                 X1INPUT  
 11,2030: 00355 1                 B29FLAG
 11,2031: 22043 0                 INITVEL1
 11,2032: 72575 0          VLOAD  VSL2
@@ -3972,7 +3972,7 @@ Banksum = 00010
 11,2144: 00027 1                 ITERCTR
 11,2145: 00005 1                 5
 11,2146: 45150 1          LXA,1  CALL
-11,2147: 03564 0                 UE7,1564            ; FIXME: RTX1 in Luminary.
+11,2147: 03564 0                 X1INPUT              ; RTX1 in Luminary.
 11,2150: 25254 0                 LAMBERT
 
 11,2151: 77214 0          CLEAR  VLOAD
@@ -3987,7 +3987,7 @@ Banksum = 00010
 11,2160: 27362 0                 INTSTALL
 
 11,2161: 63154 1          LXA,2  INCR,2              ; This coding, down to INITVEL5, is different from
-11,2162: 03564 0                 UE7,1564            ; Luminary.
+11,2162: 03564 0                 X1INPUT              ; Luminary.
 11,2163: 00002 0                 2D
 11,2164: 43135 1          SLOAD  CLEAR
 11,2165: 00050 1                 X2
@@ -4056,7 +4056,7 @@ Banksum = 00010
 11,2261: 03363 1          STORE  DELVEET3
 11,2262: 72001 0 INITVELX SETPD  LXA,1               ; This chunk is different from Luminary.
 11,2263: 00001 0                 0D
-11,2264: 03564 0                 UE7,1564
+11,2264: 03564 0                 X1INPUT  
 11,2265: 77650 1          GOTO
 11,2266: 03452 1                 RTRN                ; NORMEX in Luminary (guess based off of B4-302)
 

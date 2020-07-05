@@ -4402,7 +4402,7 @@ Banksum = 00002
    6632: 75062 1          MASK   LOW10
    6633: 65014 1          AD     2K
    6634: 54164 0          TS     LOC
-   6635: 16016 1          TCF    INTPRET +3
+   6635: 16016 1          TCF    INTPRET +2
 
                           EBANK= 1400
 

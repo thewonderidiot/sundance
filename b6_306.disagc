@@ -5,7 +5,7 @@
 36,2004: 12161 1          TCF    TOOLATE
 36,2005: 12212 0          TCF    P12SPOT
 36,2006: 00000 1          DEC    0
-36,2007: 02213 0          2CADR
+36,2007: 02213 0          2CADR  ATMAG
 36,2010: 60067 0
 36,2011: 12423 1          TCF    DISPCHNG
 36,2012: 12553 1          TCF    WAITABIT
@@ -33,7 +33,7 @@
 36,2035: 12215 1 P41TABLE TCF    P41SPOT
 36,2036: 77776 1          DEC    -1
                  ACADN85  =      P41TABLE +2
-36,2037: 03361 0          2CADR
+36,2037: 03361 0          2CADR  CALCN85
 36,2040: 74066 1
 36,2041: 15331 1          TCF    TASKOVER
 36,2042: 12557 0          TCF    TIGTASK
@@ -75,24 +75,24 @@
 36,2101: 13023 1          TCF    IGNITE
 36,2102: 14106 0          TCF    GOTOPOOH
 36,2103: 12161 1          TCF    TOOLATE
-36,2104: 12212 0
+36,2104: 12212 0          TCF    P70SPOT
 36,2105: 04300 0          DEC    2240
-36,2106: 02213 0          2CADR
+36,2106: 02213 0          2CADR  ATMAG
 36,2107: 60067 0
 36,2110: 12423 1          TCF    DISPCHNG
 36,2111: 12553 1          TCF    WAITABIT
-36,2112: 12506 1          TCF    P40IGN
-36,2113: 12601 0          TCF    P40ZOOM
+36,2112: 12506 1          TCF    P70IGN
+36,2113: 12601 0          TCF    P70ZOOM
 36,2114: 12610 0          TCF    COMFAIL2
 
-36,2115: 01513 1          VN     0675
+36,2115: 01513 1 P71TABLE VN     0675
 36,2116: 01513 1          VN     0675
 36,2117: 13023 1          TCF    IGNITE
 36,2120: 14106 0          TCF    GOTOPOOH
 36,2121: 12161 1          TCF    TOOLATE
-36,2122: 12212 0
+36,2122: 12212 0          TCF    P71SPOT
 36,2123: 05120 1          DEC    2640
-36,2124: 02213 0          2CADR
+36,2124: 02213 0          2CADR  ATMAG
 36,2125: 60067 0
 36,2126: 12423 1          TCF    DISPCHNG
 36,2127: 12553 1          TCF    WAITABIT
@@ -115,7 +115,6 @@
 
 36,2144: 00006 1          EXTEND
 36,2145: 31425 0          DCA    TIG
-
 36,2146: 53574 1          DXCH   GOBLTIME
 
 36,2147: 06014 1          TC     INTPRET             ; This interpretive block was replaced with an interrupt-
@@ -163,6 +162,8 @@
 
                  P12SPOT  =      P40SPOT
                  P42SPOT  =      P40SPOT
+                 P70SPOT  =      P40SPOT
+                 P71SPOT  =      P40SPOT
 36,2212: 45022 0 P40SPOT  CS     OCT20
 36,2213: 04655 0          TC     BANKCALL
 36,2214: 74654 0          CADR   STCLOK2
@@ -172,7 +173,7 @@
 36,2216: 77624 1          CALL
 36,2217: 64672 0                 U32,2672
 36,2220: 77624 1          CALL
-36,2221: 61213 0                 U30,3213
+36,2221: 61213 0                 INITCDUW
 36,2222: 44234 1          RTB    BDSU
 36,2223: 21454 1                 LOADTIME
 36,2224: 03457 1                 SAVET-30
@@ -181,7 +182,7 @@
 36,2227: 35755 0                 5SECDP
 36,2230: 77640 0          BMN
 36,2231: 74250 0                 U36,2250
-36,2232: 03457 1                 SAVET-30
+36,2232: 03457 1          STORE  SAVET-30
 36,2233: 77776 1          EXIT
 
 36,2234: 05375 0          TC     CHECKMM
@@ -395,8 +396,8 @@
 36,2477: 75016 1          MASK   LETABBIT
 36,2500: 26105 1          ADS    FLAGWRD9
 
-36,2501: 33123 1          CA     U36,3123
-36,2502: 55606 1          TS     UE7,1606            ; WCHPHASE?
+36,2501: 33123 1          CA     BRAKQADR
+36,2502: 55606 1          TS     WCHPHASE
 36,2503: 35025 0          CA     TWO
 36,2504: 55607 0          TS     FLPASS0
 
@@ -491,7 +492,7 @@
 
                                                      ; Luminary defines more COMFAIL code here.
 
-36,2606: 51430 1 COMFAIL1 INDEX  WHICH
+36,2606: 51430 1 COMFAIL  INDEX  WHICH
 36,2607: 10015 1          TCF    15                  ; TCF 2 in Luminary.
 
 36,2610: 05423 1 COMFAIL2 TC     PHASCHNG
@@ -694,7 +695,7 @@
 36,3047: 00001 0          OCT    1
 36,3050: 30005 1          CA     Z
 36,3051: 55175 1          TS     DISPDEX
-36,3052: 01153 1          TC     P40/42
+36,3052: 01153 1          TC     P40/RET
 
 36,3053: 04704 0 GOASTCLK TC     MAKECADR
 36,3054: 55176 1          TS     TEMPR60
@@ -745,7 +746,7 @@
 36,3122: 62067 1
                                                      ; ATMAGADR is defined here in Luminary.
 
-36,3123: 02427 1 U36,3123 OCT    2427                ; Not defined in Luminary.
+36,3123: 02427 1 BRAKQADR REMADR BRAKQUAD            ; Not defined in Luminary.
 
 36,3124: 00000 1 D29.9SEC 2DEC   2990
 36,3125: 05656 1
@@ -1122,7 +1123,7 @@
 36,3574: 27102 1          ADS    DAPBOOLS
 
 36,3575: 45012 0          CS     HIRTHROT
-36,3576: 55417 0          TS     UE7,1417            ; Luminary doesn't do this.
+36,3576: 55417 0          TS     PIF
 36,3577: 54055 0          TS     THRUST
 36,3600: 35023 0          CAF    BIT4
 36,3601: 00006 1          EXTEND
@@ -2042,7 +2043,7 @@ Banksum = 00036
 37,3261: 77624 1          CALL
 37,3262: 77504 0                 REDOEXTP
 37,3263: 77650 1          GOTO
-37,3264: 77270 1
+37,3264: 77270 1                 COMPDISP
 
 37,3265: 06014 1 V83CALL  TC     INTPRET
 37,3266: 77624 1          CALL
@@ -4922,7 +4923,7 @@ Banksum = 00041
 42,2304: 04102 0          OCT    04102
 42,2305: 00000 1          OCT    00000               ; OCT 00504 in Luminary 69.
 42,2306: 00504 0          OCT    00504
-42,2307: 02000 0          OCT    02000               ; OCT 02000 in Luminary 69.
+42,2307: 02000 0          OCT    02000               ; OCT 04000 in Luminary 69.
 42,2310: 04000 0          OCT    04000
 42,2311: 04000 0          OCT    04000
 42,2312: 04000 0          OCT    04000
@@ -5991,7 +5992,7 @@ Banksum = 00042
 43,2215: 12200 0 IMUCOARV VN     4100
                  OPTCOARV EAUALS IMUCOARV
 
-43,2216: 31310 1 RRDESBNK CAF    RADCADR
+43,2216: 31310 1 RRDESNBK CAF    RADCADR
 43,2217: 02351 1          TC     CKMODCAD +1
 43,2220: 02076 1          TC     TESTXACT
 43,2221: 35020 0          CA     RNDVZBIT
@@ -6606,7 +6607,7 @@ Banksum = 00042
 
 43,3156: 35057 0 ATTACHED CAF    EBANK3              ; Luminary 69 places the interpretive
 43,3157: 54003 0          TS     EBANK               ; code in a new FINDVAC called ATTACHIT
-43,3160: 06014 1          TC     INPTRET
+43,3160: 06014 1          TC     INTPRET
 43,3161: 77624 1          CALL
 43,3162: 27362 0                 INTSTALL
 43,3163: 43014 0          BON    CLRGO               ; This coding was condensed in Luminary

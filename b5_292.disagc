@@ -228,7 +228,7 @@
 30,2303: 03662 0          STORE  LAXIS
 30,2304: 72441 0          DOT    SL1
 30,2305: 03504 0                 V
-30,2306: 27700 0          STODL  YDOT                ; Luminary does STOVL
+30,2306: 27700 0          STOVL  YDOT
 30,2307: 03524 1                 UNIT/R/
 30,2310: 72441 0          DOT    SL1
 30,2311: 03504 0                 V
@@ -473,7 +473,7 @@
 30,2667: 04704 0                 FLPI
 30,2670: 60171 0                 P12RET
 30,2671: 04710 0                 FLIC
-30,2672: 65321 1                 U32,3321
+30,2672: 65321 1                 ABORTIGN 
 30,2673: 77614 1          BON                        ; This picks back up with Luminary
 30,2674: 04701 0                 FLVR
 30,2675: 60734 1                 CHECKALT
@@ -865,7 +865,7 @@
 30,3403: 70740 0          MP     SINCDUZ
 30,3404: 20001 1          DDOUBL
 30,3405: 54142 1          TS     TEM2
-30,3406: 61676 1          AD     -DELG               ; The rest of this block is quite different from Luminary
+30,3406: 61676 1          AD     -DELGMB             ; The rest of this block is quite different from Luminary
 30,3407: 54001 1          TS     L
 30,3410: 51652 1          INDEX  NDXCDUW
 30,3411: 33637 0          CA     DAXMAX
@@ -1153,7 +1153,7 @@ Banksum = 00030
                           BANK   31
 
 31,2000: 05563 1 LANDJUNK TC     UPFLAG              ; This is very, very different from Luminary's P68.
-31,2001: 00175 1          ADRES  FAILFLAG
+31,2001: 00175 1          ADRES  FLUNDISP
 31,2002: 03562 0          TC     FASTCHNG
 31,2003: 05413 1          TC     PHASCHNG
 31,2004: 00005 1          OCT    00005
@@ -1454,7 +1454,7 @@ Banksum = 00030
 31,2406: 07100 1 FMAXPOS  DEC    +3592               ; +3594 in Luminary
 31,2407: 04616 1 HIGHCRIT DEC    2446
 31,2410: 04127 1 LOWCRIT  DEC    2135
-31,2411: 00666 1 U31,2404 DEC    438
+31,2411: 00666 1 U31,2411 DEC    438
 31,2412: 00024 1 THROTLAG DEC    20
 31,2413: 31000 0 2.PG.FRT OCT    31000               ; Defined = PRIO31 in Luminary
 31,2414: 04143 0 /AF/CNST DEC    .13107
@@ -1724,7 +1724,7 @@ Banksum = 00030
 31,2752: 20155 1          DAS    MPAC
 31,2753: 52155 1          DXCH   MPAC
 31,2754: 07516 1          TC     ALSIGNAG
-31,2755: 55703 0          TS     RLEMT2
+31,2755: 55703 0          TS     GEFF
 
 31,2756: 03562 0          TC     FASTCHNG
 
@@ -1873,17 +1873,17 @@ Banksum = 00030
 31,3154: 61635 0          AD     TTF/8
 31,3155: 00006 1          EXTEND
 31,3156: 51606 0          INDEX  WCHPHASE
-31,3157: 60002 0          SU     2
+31,3157: 60002 0          BZMF   2
 31,3160: 31606 0          CA     WCHPHASE
-31,3161: 55537 0          TS
+31,3161: 55537 0          TS     WCHPHOLD
 
 31,3162: 03562 0          TC     FASTCHNG
 
-31,3163: 31537 1          CA     UE7,1537
+31,3163: 31537 1          CA     WCHPHOLD
 31,3164: 65023 0          AD     BIT4
 31,3165: 22007 0          ZL
 31,3166: 53607 0          DXCH   WCHPHASE
-31,3167: 51537 1          INDEX  UE7,1537
+31,3167: 51537 1          INDEX  WCHPHOLD
 31,3170: 10002 1          TCF    2
 
 31,3171: 11656 1 EXGSUB   CCS    NGUIDSUB            ; Luminary begins this with an interpretive chunk.
@@ -1910,7 +1910,7 @@ Banksum = 00030
 31,3213: 03630 1                 LAND
 31,3214: 03476 1                 R
 31,3215: 77634 0          RTB
-31,3216: 21672 1                 UNIT
+31,3216: 21672 1                 NORMUNIT
 31,3217: 00025 0          STORE  20D                 ; UNWC/2 in Luminary
 31,3220: 50235 0          VXV    DOT
 31,3221: 02150 1                 XNBPIP
@@ -1941,7 +1941,7 @@ Banksum = 00030
 31,3252: 00025 0                 20D
 31,3253: 77651 0          VSU
 31,3254: 77741 0          V/SC
-31,3255: 23715 0                 U31,3714
+31,3255: 23715 0                 PROJDIV
 
 31,3256: 03263 0 STEER?   STORE  UNWC/2              ; This is done in basic in Luminary
 31,3257: 77414 0          BOFF   EXIT
@@ -2011,7 +2011,7 @@ Banksum = 00030
 
 31,3335: 35024 1 VERTDISP CAF    BIT3                ; This is completely different from Luminary.
 31,3336: 04655 0          TC     BANKCALL
-31,3337: 66736 0          CADR   U33,2736
+31,3337: 66736 0          CADR   ALTCHK
 31,3340: 13350 0          TCF    VERTDSP2
 
 31,3341: 33720 1          CAF    V06N60
@@ -2301,7 +2301,7 @@ Banksum = 00030
 31,3711: 20646 1
 31,3712: 01022 0 PROJMIN  2DEC   .25882 B-3
 31,3713: 02016 1
-31,3714: 00517 1 U31,3714 2DEC   0.02475             ; FIXME: scaling and name!
+31,3714: 00517 1 PROJDIV  2DEC   .198 B-3            ; FIXME: scaling and name!
 31,3715: 16630 0
 31,3716: 01477 1 V06N63   VN     0663
 31,3717: 01500 0 V06N64   VN     0664
@@ -2410,7 +2410,7 @@ Banksum = 00031
 32,2042: 06014 1 P1XSETUP TC     INTPRET
 32,2043: 43345 1          DLOAD  DAD
 32,2044: 03423 1                 TIG(AS)
-32,2045: 03744 0                 N92N94R2
+32,2045: 03744 0                 INJTIME
 32,2046: 03674 1          STORE  TCSITPF
 32,2047: 34041 0          STCALL TDEC1
 32,2050: 27013 0                 CSMPREC
@@ -2419,7 +2419,7 @@ Banksum = 00031
 32,2053: 00000 1                 0
 32,2054: 00025 0                 VATT1
 32,2055: 17706 0          STODL  VCSMINT
-32,2056: 03716 1                 N91N94R1
+32,2056: 03716 1                 INJALT
 32,2057: 43312 0          SL2    DAD
 32,2060: 24564 0                 P10RM
 32,2061: 27704 1          STOVL  RLEMT2
@@ -2427,15 +2427,15 @@ Banksum = 00031
 32,2063: 03664 0          STORE  RCSMINT
 32,2064: 53435 0          VXV    UNIT
 32,2065: 00025 0                 VATT1
-32,2066: 17762 1          STODL  UNVEC
+32,2066: 17762 1          STODL  UNVEC2
 32,2067: 24560 1                 30MIN
 32,2070: 43206 1          PUSH   DAD
 32,2071: 03423 1                 TIG(AS)
-32,2072: 17740 1          STODL  N53R3
+32,2072: 17740 1          STODL  P1XMAX
 32,2073: 43021 0          BDSU   SET
 32,2074: 03423 1                 TIG(AS)
 32,2075: 00474 0                 SLOPESW
-32,2076: 17427 0          STODL  UE7,1426
+32,2076: 17427 0          STODL  P1XTMIN
 32,2077: 06233 0                 ZEROVECS
 32,2100: 03756 0          STORE  P1XDT
 
@@ -2448,7 +2448,7 @@ Banksum = 00031
 32,2107: 51214 1                 RP-TO-R
 32,2110: 03676 0          STORE  RLSBRCS
 32,2111: 46206 1          PUSH   VPROJ
-32,2112: 03762 1                 UNVEC
+32,2112: 03762 1                 UNVEC2
 32,2113: 57552 1          SL1    VCOMP
 32,2114: 77655 1          VAD
 32,2115: 72056 1          UNIT   LXA,1
@@ -2472,7 +2472,7 @@ Banksum = 00031
 32,2137: 15517 0          STODL  TET
 32,2140: 03423 1                 TIG(AS)
 32,2141: 45215 0          DAD    DSU
-32,2142: 03744 0                 N92N94R2
+32,2142: 03744 0                 INJTIME
 32,2143: 03674 1                 TCSITPF
 32,2144: 34041 0          STCALL TDEC1
 32,2145: 27057 0                 INTEGRVS
@@ -2489,7 +2489,7 @@ Banksum = 00031
 32,2160: 00017 1                 RATT1
 32,2161: 77715 1          PDVL
 32,2162: 00025 0                 VATT1
-32,2163: 03770 1          STORE  UE7,1767
+32,2163: 03770 1          STORE  P11VTPF
 32,2164: 77646 0          ABVAL
 32,2165: 45006 0          PUSH   CALL
 32,2166: 64477 1                 P11SMA
@@ -2497,7 +2497,7 @@ Banksum = 00031
 32,2170: 00017 1                 RATT1
 32,2171: 03724 0                 RP1XROT
 32,2172: 65241 0          DOT    PDDL
-32,2173: 03762 1                 UNVEC
+32,2173: 03762 1                 UNVEC2
 32,2174: 00003 1                 2D
 32,2175: 41366 1          SQRT   DMP
 32,2176: 00003 1                 2D
@@ -2513,7 +2513,7 @@ Banksum = 00031
 
 32,2210: 43345 1 P10CSI   DLOAD  DAD
 32,2211: 03423 1                 TIG(AS)
-32,2212: 03744 0                 N92N94R2
+32,2212: 03744 0                 INJTIME
 32,2213: 27621 1          STOVL  TCSI
 32,2214: 03724 0                 RP1XROT
 32,2215: 43142 1          SR1    SET
@@ -2570,7 +2570,7 @@ Banksum = 00031
 32,2275: 02471 1          TC     P1XERDIS
 
 32,2276: 45345 1 P10ITER  DLOAD  DSU
-32,2277: 03746 1                 N56R3
+32,2277: 03746 1                 CDHDELH
 32,2300: 03567 0                 DIFFALT
 32,2301: 26760 1          STOVL  DELDEP
 32,2302: 02303 0                 DELVEET1
@@ -2582,9 +2582,9 @@ Banksum = 00031
 32,2310: 17565 1          STODL  DELVTPF
 32,2311: 03756 0                 P1XDT
 32,2312: 14015 0          STODL  DELINDEP
-32,2313: 03740 1                 N53R3
+32,2313: 03740 1                 P1XMAX
 32,2314: 14017 1          STODL  MAX
-32,2315: 03427 0                 UE7,1426
+32,2315: 03427 0                 P1XTMIN
 32,2316: 14011 1          STODL  MIN
 32,2317: 24556 1                 P10FRAC
 32,2320: 14051 0          STODL  TWEEKIT
@@ -2601,7 +2601,7 @@ Banksum = 00031
 32,2333: 00017 1                 MAX
 32,2334: 17740 1          STODL  P1XMAX
 32,2335: 00011 1                 MIN
-32,2336: 17427 0          STODL  UE7,1426
+32,2336: 17427 0          STODL  P1XTMIN
 32,2337: 00015 0                 DELINDEP
 32,2340: 03756 0          STORE  P1XDT
 
@@ -2624,11 +2624,11 @@ Banksum = 00031
 
 32,2361: 50375 0 P1XFINAL VLOAD  DOT
 32,2362: 03676 0                 RLSBRCS
-32,2363: 03762 1                 UNVEC
+32,2363: 03762 1                 UNVEC2
 32,2364: 53515 0          PDVL   UNIT
 32,2365: 03676 0                 RLSBRCS
 32,2366: 72441 0          DOT    SL1
-32,2367: 03750 0                 UE7,1747
+32,2367: 03750 0                 ULVEC
 32,2370: 75326 1          ACOS   SIGN
 32,2371: 57405 1          DMP    DCOMP
 32,2372: 24564 0                 P10RM
@@ -2639,14 +2639,14 @@ Banksum = 00031
 32,2377: 03423 1                 TIG(AS)
 32,2400: 45214 1          SET    DSU
 32,2401: 03075 0                 ASCNTFLG
-32,2402: 03672 1                 UE7,1671
-32,2403: 17427 0          STODL  UE7,1426
+32,2402: 03672 1                 P1XDELTT
+32,2403: 17427 0          STODL  P1XTMIN
 32,2404: 03423 1                 TIG(AS)
 32,2405: 43006 0          PUSH   BON
 32,2406: 03306 1                 LTCPFLG
 32,2407: 64420 0                 P11DISP
 32,2410: 77615 0          DAD
-32,2411: 03744 0                 N92N94R2
+32,2411: 03744 0                 INJTIME
 32,2412: 03621 1          STORE  TCSI
 32,2413: 77615 0          DAD
 32,2414: 02261 0                 T1TOT2
@@ -2655,12 +2655,12 @@ Banksum = 00031
 32,2417: 64464 0                 P1XEND
 
 32,2420: 77615 0 P11DISP  DAD
-32,2421: 03742 0                 N91R2
+32,2421: 03742 0                 TPITIME
 32,2422: 03577 1          STORE  INTIME
 32,2423: 17623 0          STODL  TTPI
 32,2424: 03760 0                 N91R3
 32,2425: 17714 0          STODL  N92N94R3
-32,2426: 03744 0                 N92N94R2
+32,2426: 03744 0                 INJTIME
 32,2427: 45415 0          DAD    STADR
 32,2430: 40103 1          STCALL TCSITPF
 32,2431: 64516 1                 P1XROT  
@@ -2673,8 +2673,8 @@ Banksum = 00031
 32,2440: 00012 1                 10D
 32,2441: 00275 1                 B29FLAG
 32,2442: 45345 1          DLOAD  DSU
-32,2443: 03744 0                 N92N94R2
-32,2444: 03742 0                 N91R2
+32,2443: 03744 0                 INJTIME
+32,2444: 03742 0                 TPITIME
 32,2445: 26355 0          STOVL  DELLT4
 32,2446: 03724 0                 RP1XROT
 32,2447: 26341 0          STOVL  RINIT
@@ -2687,7 +2687,7 @@ Banksum = 00031
 32,2456: 27563 1          STOVL  DELVTPI
 32,2457: 03553 1                 VACT4
 32,2460: 70451 0          VSU    VSR2
-32,2461: 03770 1                 UE7,1767
+32,2461: 03770 1                 P11VTPF
 32,2462: 77646 0          ABVAL
 32,2463: 03565 1          STORE  DELVTPF
 
@@ -2727,23 +2727,23 @@ Banksum = 00031
 32,2521: 41461 1          SL     PUSH
 32,2522: 20217 1                 14D
 32,2523: 74346 0          COS    VXSC
-32,2524: 03750 0                 UE7,1747
+32,2524: 03750 0                 ULVEC
 32,2525: 73525 1          PDDL   SIN
 32,2526: 47315 0          PDVL   VXV
-32,2527: 03762 1                 UNVEC
-32,2530: 03750 0                 UE7,1747
+32,2527: 03762 1                 UNVEC2
+32,2530: 03750 0                 ULVEC
 32,2531: 74256 0          UNIT   VXSC
 32,2532: 77655 1          VAD
 32,2533: 72561 0          VXSC   VSL2
 32,2534: 03704 1                 RLEMT2
 32,2535: 03724 0          STORE  RP1XROT
 32,2536: 74256 0          UNIT   VXSC
-32,2537: 03720 1                 UE7,1717
+32,2537: 03720 1                 P1XVVER
 32,2540: 53515 0          PDVL   UNIT
 32,2541: 03724 0                 RP1XROT
 32,2542: 74235 0          VXV    VXSC
-32,2543: 03762 1                 UNVEC
-32,2544: 03722 0                 UE7,1721
+32,2543: 03762 1                 UNVEC2
+32,2544: 03722 0                 P1XVHOR
 32,2545: 52372 0          VSL1   VSU
 32,2546: 66476 1          VCOMP  VSL3
 32,2547: 03732 1          STORE  VP1XROT
@@ -2774,7 +2774,7 @@ Banksum = 00031
 32,2576: 27533 1 ROOT1/MU 2DEC   4.516259492 E-9 B-14
 32,2577: 07571 0
 
-32,2600: 00006 1 P1XDSIP  EXTEND
+32,2600: 00006 1 P1XDISP  EXTEND
 32,2601: 31423 0          DCA    TIG(AS)
 32,2602: 53425 1          DXCH   TIG
 32,2603: 55424 0          TS     TIG
@@ -3175,14 +3175,14 @@ Banksum = 00031
 32,3312: 75545 1          CADR   ENGINOF2
 32,3313: 00003 1          RELINT
 
-32,3314: 03413 1          TC     U32,3413
+32,3314: 03413 1          TC     ZONEZERO
 
-32,3315: 06014 1 U32,3315 TC     INTPRET
+32,3315: 06014 1 ABRTGUID TC     INTPRET
 32,3316: 45014 0          SET    CALL
 32,3317: 04470 0                 FLIC
 32,3320: 60266 0                 ASCENT
 
-32,3321: 77775 1 U32,3321 VLOAD
+32,3321: 77775 1 ABORTIGN VLOAD
 32,3322: 03255 0                 UNFC/2
 32,3323: 25256 1          STOVL  POINTVSM
 32,3324: 06231 1                 UNITX
@@ -3387,7 +3387,7 @@ Banksum = 00031
 32,3571: 65405 0                 U32,3405
 
 32,3572: 77624 1 U32,3572 CALL
-32,3573: 65611 1                 TOGOCOMP
+32,3573: 65611 1                 TGOCOMP
 32,3574: 77650 1          GOTO
 32,3575: 65303 1                 INJTARG
 
@@ -3405,7 +3405,7 @@ Banksum = 00031
 32,3607: 04674 0 ABORTALM TC     POSTJUMP            ; Luminary has more code here.
 32,3610: 75711 1          CADR   U36,3711            ; ENGINOF3?
 
-32,3611: 45234 0 TOGOCOMP RTB    DSU
+32,3611: 45234 0 TGOCOMP  RTB    DSU
 32,3612: 21454 1                 LOADTIME
 32,3613: 03425 1                 TIG
 32,3614: 77661 0          SL
@@ -3553,9 +3553,9 @@ Banksum = 00032
 33,2015: 00036 1          ADRES  DRIFTFLG
 
 33,2016: 35024 1          CAF    FOUR
-33,2017: 55472 0          TS     UNK0472             ; Luminary only stores FOUR in PIPAGE.
+33,2017: 55472 0          TS     DVCNTR
 33,2020: 55261 1          TS     PIPAGE
-33,2021: 55260 0          TS     UNK1260
+33,2021: 55260 0          TS     SETDVCNT
 
 33,2022: 35010 0          CAF    LRBYBIT             ; Luminary doesn't do this.
 33,2023: 55263 0          TS     LRSTAT 
@@ -3851,7 +3851,7 @@ Banksum = 00032
 33,2357: 01244 1                 MASS
 33,2360: 27556 1          STOVL  MASS1
 33,2361: 06231 1                 UNITX
-33,2362: 03461 1          STORE  UE7,1460
+33,2362: 03461 1          STORE  UNFC/2A
 33,2363: 77214 0          BON    VLOAD               ; This is in the opposite order in Luminary.
 33,2364: 03347 1                 MUNFLAG
 33,2365: 66410 1                 NORMLIZ1
@@ -4179,7 +4179,7 @@ Banksum = 00032
 33,2777: 27263 0 SETLSTAT ADS    LRSTAT
 33,3000: 12641 1          TCF    CONTSERV
 
-33,3001: 35025 0 U33,3001 CAF    TWO
+33,3001: 35025 0 15KCHK   CAF    TWO
 33,3002: 04655 0          TC     BANKCALL
 33,3003: 66736 0          CADR   ALTCHK
 33,3004: 12641 1          TCF    CONTSERV
@@ -4238,7 +4238,7 @@ Banksum = 00032
 33,3067: 01236 1                 GDT/2
 33,3070: 65255 0          VAD    PDDL
 33,3071: 01226 0                 VN
-33,3072: 03546 0                 PGUIDE
+33,3072: 03546 0                 PIPTIME1            ; PGUIDE in Luminary
 33,3073: 54225 0          DSU    SL                  ; Luminary doesn't subtract PIPTIME
 33,3074: 01234 0                 PIPTIME
 33,3075: 20207 0                 6D
@@ -4334,17 +4334,17 @@ Banksum = 00032
 
 33,3216: 77664 0 RPCRTIME DEC    -6 E2 B-17          ; This was padloaded in Luminary.
 
-33,3217: 05463 0 U33,3217 2DEC
+33,3217: 05463 0 0.175    2DEC   0.175
 33,3220: 06315 0
-33,3221: 04753 1 U33,3221 2DEC
+33,3221: 04753 1 0.155    2DEC   0.155
 33,3222: 20510 1
-33,3223: 35056 1 LRHMAX   2DEC   14894.54547
+33,3223: 35056 1 LRWH     2DEC   0.4545454545
 33,3224: 21351 0
 33,3225: 76643 1 U33,3225 2DEC
 33,3226: 50641 1
 33,3227: 00004 0 6.25     2DEC   .01905              ; 7.5 in Luminary
 33,3230: 34035 0
-33,3231: 00012 1 U33,3231 2DEC
+33,3231: 00012 1 LRHMAX   2DEC   170688
 33,3232: 15300 0
                  100CS    EQUALS 2SEC(18)
 33,3233: 00014 1 2SEC(18) 2DEC   200 B-18
@@ -4393,7 +4393,7 @@ Banksum = 00032
 33,3304: 16425 0          STODL  DELTAH
 33,3305: 03512 1                 HCALC
 33,3306: 43205 1          DMP    DAD
-33,3307: 27220 1                 U33,3217
+33,3307: 27220 1                 0.175
 33,3310: 26756 1                 50FT
 33,3311: 51525 1          PDDL   ABS
 33,3312: 02425 0                 DELTAH
@@ -4403,7 +4403,7 @@ Banksum = 00032
 
 33,3316: 24156 0          INCR   LRLCTR
 33,3317: 10121 1          CCS    OVFIND
-33,3320: 13560 0          TCF    U33,3560
+33,3320: 13560 0          TCF    HFAIL
 
 33,3321: 30075 0          CA     FLAGWRD1
 33,3322: 75026 1          MASK   HINHFBIT
@@ -4413,13 +4413,13 @@ Banksum = 00032
 33,3325: 06014 1          TC     INTPRET
 33,3326: 56345 0          DLOAD  DDV
 33,3327: 03512 1                 HCALC
-33,3330: 27232 1                 U33,3231
+33,3330: 27232 1                 LRHMAX
 33,3331: 44204 1          BOVB   BDSU
 33,3332: 67360 0                 VMEASCHK
 33,3333: 17714 0                 NEARONE
 33,3334: 56205 0          DMP    DDV
 33,3335: 02425 0                 DELTAH
-33,3336: 27224 0                 LRHMAX
+33,3336: 27224 0                 LRWH
 33,3337: 53361 0          VXSC   VAD                 ; This pair matches Luminary
 33,3340: 03524 1                 UNIT/R/
 33,3341: 03560 1                 R1S
@@ -4521,7 +4521,7 @@ Banksum = 00032
 33,3455: 65225 1          DSU    PDDL
 33,3456: 00007 0                 6
 33,3457: 41246 1          ABS    DMP
-33,3460: 27222 0                 U33,3221
+33,3460: 27222 0                 0.155
 33,3461: 65215 1          DAD    PDDL
 33,3462: 27230 0                 6.25
 33,3463: 00007 0                 6
@@ -4592,7 +4592,7 @@ Banksum = 00032
 33,3546: 35022 1          CAF    READVBIT
 33,3547: 71263 0          MASK   LRSTAT
 33,3550: 00006 1          EXTEND
-33,3551: 13001 1          BZF    U33,3001            ; Luminary doesn't do this.
+33,3551: 13001 1          BZF    15KCHK
 
 33,3552: 00004 0 READV    INHINT                     ; Luminary doesn't do this INHINT.
 33,3553: 37672 0          CAF    PRIO32
@@ -4638,7 +4638,7 @@ Banksum = 00032
 33,3613: 31105 1          DCA    SAMPLSUM
 33,3614: 53671 1          DXCH   VMEAS
                                                      ; Luminary has much more code here
-33,3615: 41263 0          CS     lrstat
+33,3615: 41263 0          CS     LRSTAT
 33,3616: 75020 1          MASK   VELDABIT
 33,3617: 27263 0          ADS    LRSTAT
                                                      ; Luminary has much more code here.
@@ -4667,7 +4667,7 @@ Banksum = 00032
 33,3637: 53661 0          DXCH   LRVTIME
 
 33,3640: 00006 1          EXTEND
-33,3641: 30033 1          DCA    DCUX
+33,3641: 30033 1          DCA    CDUX
 33,3642: 53663 1          DXCH   LRXCDU
 
 33,3643: 30034 0          CA     CDUZ
@@ -4814,7 +4814,7 @@ Banksum = 00033
 34,2034: 03635 1                 VTIG                ; RTIG in Luminary
 34,2035: 77655 1          VAD                        ; Luminary includes PDVL VAD
 34,2036: 03643 0                 DELVSIN
-34,2037: 36744 0          STCALL UE5,1743            ; FIXME: This is a lot smaller than Luminary
+34,2037: 36744 0          STCALL VVEC
 34,2040: 46116 0                 PERIAPO
 34,2041: 77650 1          GOTO
 34,2042: 03617 1                 QTEMP
@@ -5278,7 +5278,7 @@ Banksum = 00033
 34,2751: 02263 1          STORE  T2TOT3
 34,2752: 51025 1          DSU    BPL
 34,2753: 30076 0                 TMIN
-34,2754: 70775 0                 U34,2775            ; P32/P72C in Luminary
+34,2754: 70775 0                 P10CHECK            ; P32/P72C in Luminary
 34,2755: 43014 0 SCNDSOL  BON    BOFF
 34,2756: 03302 0                 S32.1F3A
 34,2757: 72126 1                 ALMXIT
@@ -5296,7 +5296,7 @@ Banksum = 00033
 34,2773: 37575 1          STCALL LOOPCT
 34,2774: 70111 1                 CSI/B
 
-34,2775: 52014 0 U34,2775 BOFF   GOTO                ; This chunk is not present in Luminary
+34,2775: 52014 0 P10CHECK BOFF   GOTO                ; This chunk is not present in Luminary
 34,2776: 03346 0                 LTCPFLG
 34,2777: 64271 1                 P10ALARM
 34,3000: 72211 0                 P32/P72C
@@ -5510,7 +5510,7 @@ Banksum = 00033
 34,3305: 03311 1          TC     VNPOOH2
 34,3306: 35006 1          CAF    POSMAX
 34,3307: 55175 1          TS     DISPDEX
-34,3310: 03325 0          TC     U34,3325
+34,3310: 03325 0          TC     P31EXIT
 
 34,3311: 00006 1 VNPOOH2  EXTEND
 34,3312: 23452 0          QXCH   RTRN
@@ -5525,7 +5525,7 @@ Banksum = 00033
 34,3323: 00014 1          OCT    00014
 34,3324: 05225 1          TC     ENDOFJOB
 
-34,3325: 04655 0 U34,3325 TC     BANKCALL
+34,3325: 04655 0 P31EXIT  TC     BANKCALL
 34,3326: 11064 0          CADR   R02BOTH
 34,3327: 06014 1          TC     INTPRET
 34,3330: 41575 0          VLOAD  PUSH
@@ -5533,7 +5533,7 @@ Banksum = 00033
 34,3332: 77624 1          CALL
 34,3333: 20002 1                 MIDGIM
 34,3334: 77624 1          CALL
-34,3335: 72000 1                 U35,2000
+34,3335: 72000 1                 REVN1645
 34,3336: 77776 1          EXIT
 34,3337: 05575 0          TC     DOWNFLAG
 34,3340: 00045 0          ADRES  XDELVFLG
@@ -5543,7 +5543,7 @@ Banksum = 00033
 34,3343: 01452 0 V06N42   VN     0642
 34,3344: 04043 1 V16N35   VN     1635
 
-34,3345: 71220 1 U34,3345 STQ    DLOAD
+34,3345: 71220 1 P31INT   STQ    DLOAD
 34,3346: 03617 1                 QTEMP
 34,3347: 03425 1                 TIG
 34,3350: 34041 0          STCALL TDEC1
@@ -5843,7 +5843,7 @@ Banksum = 00034
 
                           BANK   35
 
-35,2000: 77420 1 U35,2000 STQ    EXIT                ; Luminary doesn't have this chunk
+35,2000: 77420 1 REVN1645 STQ    EXIT                ; Luminary doesn't have this chunk
 35,2001: 03652 0                 QTEMP1
 
 35,2002: 02465 1          TC     COMPTGO
@@ -5904,8 +5904,8 @@ Banksum = 00034
 35,2064: 12066 1          TCF    +2
 35,2065: 12060 1          TCF    -5
 
-35,2066: 35012 1          CAF    BIT13               ; The rest of this is not present in Luminary.
-35,2067: 70077 0          MASK   REFSMBIT
+35,2066: 35012 1          CAF    REFSMBIT            ; The rest of this is not present in Luminary.
+35,2067: 70077 0          MASK   FLAGWRD3
 35,2070: 00006 1          EXTEND
 35,2071: 12102 1          BZF    U35,2102
 35,2072: 06014 1          TC     INTPRET
@@ -5924,12 +5924,12 @@ Banksum = 00034
 35,2106: 02261 0          STORE  +MGA
 
 35,2107: 77624 1 U35,2107 CALL
-35,2110: 72000 1                 U35,2000
+35,2110: 72000 1                 REVN1645
 35,2111: 77414 0          SET    EXIT
 35,2112: 01067 1                 XDELVFLG
 35,2113: 04106 1          TC     GOTOPOOH
 
-35,2114: 01441 1 V06N32   VN     0633
+35,2114: 01441 1 V06N33   VN     0633
 35,2115: 01522 0 V06N82   VN     0682                ; Not present in Luminary
 35,2116: 01452 0 V06N42   VN     0642
 35,2117: 01455 1 V06N45   VN     0645                ; Not present in Luminary
@@ -6576,7 +6576,7 @@ Banksum = 00034
 35,3274: 43244 1          BPL    DAD
 35,3275: 73277 1                 NOPIE
 35,3276: 06241 0                 DPPOSMAX
-35,3277: 15770 0 NPOIE    STODL  ACTCENT
+35,3277: 15770 0 NOPIE    STODL  ACTCENT
 35,3300: 03616 0                 TPASS4
 35,3301: 77625 0          DSU
 35,3302: 03577 1                 INTIME

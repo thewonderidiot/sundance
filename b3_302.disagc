@@ -2254,7 +2254,7 @@ Banksum = 00015
 16,2075: 55631 0          TS     ACCSET
 16,2076: 05142 0          TC     NOVAC
                           EBANK= AOSQ
-16,2077: 02305 0          2CADR  1/ACCSET
+16,2077: 02305 0 1/ACCSAD 2CADR  1/ACCSET
 16,2100: 40106 1
 
 16,2101: 02043 1 CHECKUP  TC     CHEKBITS
@@ -2368,7 +2368,7 @@ Banksum = 00015
 16,2231: 07400 1 BGIM23   OCTAL  07400
 16,2232: 02444 1 PAXADIDL 2CADR  PAXIS
 16,2233: 34106 1
-16,2234: 03112 0 CHKVISAD CADR   CHKVISFZ
+16,2234: 03112 0 CHKVISAD ADRES  CHKVISFZ
 16,2235: 02077 0
                                                      ; Sundance 292 defines -1.4D/S and 2JNEGMAX here
 
@@ -3746,7 +3746,7 @@ Banksum = 77761
 17,2515: 75011 0          MASK   USEQRJTS
 17,2516: 10000 0          CCS    A
 17,2517: 55625 0          TS     COTROLER
-17,2520: 13526 1          TC     SPSRCS
+17,2520: 13526 1          TCF    SPSRCS
 17,2521: 02470 0 TJLAWADR GENADR TJLAW +3            ; This is defined lower in Luminary
 17,2522: 35024 1          CAF    FOUR
 17,2523: 55740 1          TS     NUMBERT
@@ -4535,8 +4535,8 @@ Banksum = 00017
                           BANK   20
                           EBANK= QPLACE
 
-20,2000: 07766 1          TC     UNK7766             ; FIXME: Sundance 292 and Luminary don't do this
-20,2001: 32071 0 DAPDATA1 CAF    BOOLSMSK
+20,2000: 07766 1 DAPDATA1 TC     UNK7766             ; FIXME: Sundance 292 and Luminary don't do this
+20,2001: 32071 0          CAF    BOOLSMSK
 20,2002: 71102 1          MASK   DAPBOOLS
 20,2003: 55353 1          TS     DAPDATR1
                                                      ; This coding is very different from Luminary
@@ -4557,13 +4557,13 @@ Banksum = 00017
 20,2021: 31353 0          CA     DAPDATR1
 20,2022: 75012 0          MASK   CSMDOCKD
 20,2023: 00006 1          EXTEND
-20,2024: 12043 0          BZF    SETMASS +1
+20,2024: 12043 0          BZF    ONEMASS
 
 20,2025: 35025 0          CAF    BIT2
 20,2026: 00006 1          EXTEND
 20,2027: 02030 0          RAND   CHAN30
 20,2030: 00006 1          EXTEND
-20,2031: 12042 1          BZF    SETMASS
+20,2031: 12042 1          BZF    ONEMASS -1
 
 20,2032: 05651 0          TC     ALARM
 20,2033: 01706 1          OCT    01706
@@ -4574,9 +4574,10 @@ Banksum = 00017
 20,2040: 12034 0          TCF    DPDATALM
 20,2041: 12000 1          TCF    DAPDATA1
 
-20,2042: 31336 0 SETMASS  CA     CSMMASS
-20,2043: 61335 0          AD     LEMMASS
+20,2042: 31336 0          CA     CSMMASS
+20,2043: 61335 0 ONEMASS  AD     LEMMASS
 20,2044: 55243 1          TS     MASS
+
 20,2045: 42071 1          CS     BOOLSMSK
 20,2046: 71102 1          MASK   DAPBOOLS
 20,2047: 61353 0          AD     DAPDATR1
@@ -4737,7 +4738,7 @@ Banksum = 00017
 20,2261: 22003 1          LXCH   EBANK
 20,2262: 00002 0          TC     Q
 
-20,2263: 35065 1 ALLCOAST CAE    EBANK6              ; Luminary saves Q and does a STOPRATE instead.
+20,2263: 35065 1 ALLCOAST CAF    EBANK6              ; Luminary saves Q and does a STOPRATE instead.
 20,2264: 56003 1          XCH    EBANK
 20,2265: 54066 0          TS     ITEMP6
 20,2266: 45030 0          CS     ZERO

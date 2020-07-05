@@ -3170,7 +3170,7 @@ Banksum = 77770
 
 10,2707: 50154 1          INDEX  FACEREG
 10,2710: 35022 1          CA     BIT5
-10,2711: 65024 1          CAD    FOUR
+10,2711: 65024 1          AD     FOUR
 10,2712: 07731 0          TC     UPENT2
 10,2713: 02662 1 XCHQADD  GENADR XCHSLEEP
 10,2714: 30100 0          CA     FLAGWRD4
@@ -3898,9 +3898,9 @@ Banksum = 00010
 11,2035: 02347 0                 VINIT
 11,2036: 77752 1          VSL2
 11,2037: 26347 0          STOVL  VINIT
-11,2040: 01772 1                 RTARG1
+11,2040: 01772 1                 RTARG 
 11,2041: 77752 1          VSL2
-11,2042: 01772 1          STORE  RTARG1
+11,2042: 01772 1          STORE  RTARG 
 
 11,2043: 71331 0 INITVEL1 SSP    DLOAD
 11,2044: 03604 0                 ITCTR
@@ -3913,7 +3913,7 @@ Banksum = 00010
 11,2053: 77775 1          VLOAD
 11,2054: 02341 0                 RINIT
 11,2055: 26655 0          STOVL  R1VEC
-11,2056: 01772 1                 RTARG1
+11,2056: 01772 1                 RTARG 
 11,2057: 16663 0          STODL  R2VEC
 11,2060: 02355 0                 DELLT4
 11,2061: 02671 0          STORE  TDESIRED
@@ -3924,7 +3924,7 @@ Banksum = 00010
 11,2066: 53435 0          VXV    UNIT
 11,2067: 02347 0                 VINIT
 11,2070: 26674 0          STOVL  UN
-11,2071: 01772 1                 RTARG1
+11,2071: 01772 1                 RTARG 
 11,2072: 50256 0          UNIT   DOT
 11,2073: 43015 1          DAD    CLEAR
 11,2074: 03654 0                 COZY4
@@ -3949,7 +3949,7 @@ Banksum = 00010
 11,2116: 77244 0          BPL    VLOAD
 11,2117: 22122 0                 INITVEL3
 11,2120: 02663 0                 R2VEC
-11,2121: 01772 1          STORE  RTARG1
+11,2121: 01772 1          STORE  RTARG 
 11,2122: 63345 0 INITVEL3 DLOAD  PDVL                ; This coding, down to INITVEL4, is very different.
 11,2123: 22001 0                 EPSFOUR             ; FIXME: MUEARTH in Luminary.
 11,2124: 02674 0                 UN
@@ -4023,7 +4023,7 @@ Banksum = 00010
 11,2222: 22234 1                 INITVEL6
 
 11,2223: 52375 1          VLOAD  VSU
-11,2224: 01772 1                 RTARG1
+11,2224: 01772 1                 RTARG 
 11,2225: 00017 1                 RATT1
 11,2226: 77655 1          VAD
 11,2227: 02663 0                 R2VEC
@@ -4034,7 +4034,7 @@ Banksum = 00010
 
 11,2234: 77775 1 INITVEL6 VLOAD
 11,2235: 02663 0                 R2VEC
-11,2236: 01772 1          STORE  RTARG1
+11,2236: 01772 1          STORE  RTARG 
 11,2237: 52375 1 INITVEL7 VLOAD  VSU
 11,2240: 02357 1                 VIPRIME
 11,2241: 02347 0                 VINIT
@@ -4048,9 +4048,9 @@ Banksum = 00010
 11,2251: 02357 1                 VIPRIME
 11,2252: 77742 0          VSR2
 11,2253: 26357 1          STOVL  VIPRIME
-11,2254: 01772 1                 RTARG1
+11,2254: 01772 1                 RTARG 
 11,2255: 77742 0          VSR2
-11,2256: 25772 1          STORVL RTARG1
+11,2256: 25772 1          STORVL RTARG 
 11,2257: 03363 1                 DELVEET3
 11,2260: 77742 0          VSR2
 11,2261: 03363 1          STORE  DELVEET3
